@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
+import { BrandBadge } from "@/components/ui/BrandBadge";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -43,13 +44,15 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href={`/${locale}`} className="group flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-[#F05A1A]/10 border border-[#F05A1A]/30 group-hover:bg-orange-grad transition-all duration-300 flex items-center justify-center shadow-xs">
-            <span className="font-black text-[#F05A1A] group-hover:text-white text-xs transition-colors">
-              TA
+          <BrandBadge className="w-10 h-10" />
+          <span className="flex flex-col leading-none">
+            <span className="font-display font-extrabold text-[15px] tracking-tight text-[#17140F] group-hover:text-[#F05A1A] transition-colors">
+              {isAr ? "توسار" : "Tusar"}
+              <span className="text-[#F05A1A]">.</span>
             </span>
-          </div>
-          <span className="font-display font-bold text-[15px] tracking-tight text-[#17140F] group-hover:text-[#F05A1A] transition-colors">
-            {isAr ? "توسار أحمد" : "Tusar Ahammad"}
+            <span className="mt-1 font-mono text-[9.5px] font-semibold tracking-[0.28em] uppercase text-[#8F877C] rtl:tracking-normal">
+              {isAr ? "أحمد" : "Ahammad"}
+            </span>
           </span>
         </Link>
 

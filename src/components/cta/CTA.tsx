@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { AccentText } from "@/components/ui/AccentText";
+import { BrandBadge } from "@/components/ui/BrandBadge";
 
 export function CTA() {
   const locale = useLocale();
@@ -27,9 +28,21 @@ export function CTA() {
             <span className="hidden sm:inline">[ design · print · brand ]</span>
           </div>
 
-          <div className="relative w-14 h-14 rounded-2xl bg-[#F05A1A]/15 border border-[#F05A1A]/40 flex items-center justify-center text-[#FF7A3D] shadow-xs mt-4">
-            <Sparkles className="w-7 h-7" />
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.6, rotate: -20 }}
+            whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="relative mt-6 mb-2"
+          >
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="group"
+            >
+              <BrandBadge tone="dark" className="w-20 h-20" />
+            </motion.div>
+          </motion.div>
 
           <h2 className="relative text-3xl md:text-5xl font-black text-[#F7F4EF] max-w-2xl leading-tight">
             <AccentText text={t("title")} />

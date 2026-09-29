@@ -500,8 +500,8 @@ button:active, a.btn-interactive:active {
 /* Comet-tail gradient ring orbiting the round portrait */
 .ring-comet {
   background: conic-gradient(from 0deg, transparent 0%, #FF9A4D 22%, #F05A1A 40%, #D6360E 50%, transparent 62%);
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
-  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - var(--ring-w, 3px)), #000 calc(100% - var(--ring-w, 3px)));
+  mask: radial-gradient(farthest-side, transparent calc(100% - var(--ring-w, 3px)), #000 calc(100% - var(--ring-w, 3px)));
 }
 
 /* Rotating circular text badge */

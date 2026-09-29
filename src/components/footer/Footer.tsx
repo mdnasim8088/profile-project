@@ -3,6 +3,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import { ArrowUp } from "lucide-react";
 import { motion } from "framer-motion";
+import { BrandBadge } from "@/components/ui/BrandBadge";
 
 export function Footer() {
   const locale = useLocale();
@@ -17,13 +18,16 @@ export function Footer() {
     <footer className="bg-[#17140F] ink-grid border-t-2 border-[#F05A1A] py-12 relative z-10">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-6">
         {/* Left: Brand & Tagline */}
-        <div className="flex flex-col items-center md:items-start gap-1.5 text-center md:text-start">
-          <span className="font-bold text-lg text-[#F7F4EF] tracking-wide">
-            {isAr ? "توسار أحمد" : "Tusar Ahammad"}
-          </span>
-          <p className="text-[11px] text-[#8F877C] tracking-wider font-bold uppercase">
-            {t("brandSubtitle")}
-          </p>
+        <div className="group flex flex-col md:flex-row items-center gap-4 text-center md:text-start">
+          <BrandBadge tone="dark" className="w-12 h-12 m-1.5" />
+          <div className="flex flex-col gap-1.5">
+            <span className="font-display font-bold text-lg text-[#F7F4EF] tracking-wide">
+              {isAr ? "توسار أحمد" : "Tusar Ahammad"}
+            </span>
+            <p className="text-[11px] text-[#8F877C] tracking-wider font-bold uppercase">
+              {t("brandSubtitle")}
+            </p>
+          </div>
         </div>
 
         {/* Center: Social Links */}
