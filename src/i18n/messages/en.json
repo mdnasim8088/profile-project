@@ -1,0 +1,136 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "experience": "Experience",
+    "services": "Services",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "title": "Graphic Designer & Print Machine Operator",
+    "description": "I create meaningful visual identities, professional designs, and high-precision print-ready creative solutions with 6+ years of specialized experience.",
+    "ctaViewWork": "View My Work",
+    "ctaContact": "Work With Me",
+    "quality": "Print-Ready Quality",
+    "identity": "Brand Identity",
+    "exp": "6+ Yrs Experience",
+    "expertBadge": "Print & Plotter RIP Expert",
+    "available": "Available for Work"
+  },
+  "stats": {
+    "sectionBadge": "KEY METRICS",
+    "title": "Numbers That Speak",
+    "experience": "Years of Experience",
+    "companies": "Companies Worked With",
+    "countries": "Countries Worked In",
+    "projects": "Major Projects Completed"
+  },
+  "about": {
+    "badge": "About Me",
+    "headline": "Designing for Screen & High-Precision Print Production",
+    "bio": "I'm Tusar Ahammad, a Graphic Designer trained at Creative IT Institute with over 6 years of expertise in brand design, store management, and industrial print machine operation across Bangladesh and Saudi Arabia.",
+    "competenciesTitle": "Key Competencies & Technical Skills",
+    "card1Title": "Digital & Brand Design",
+    "card1Desc": "Crafting logos, social media assets, carousel posts, and YouTube thumbnails with high precision.",
+    "card2Title": "Print & Production Specialist",
+    "card2Desc": "Operating UV printers, plotters, and banner machines using Roland VersaWorks and SignMaster.",
+    "card3Title": "Management & Leadership",
+    "card3Desc": "Over 3 years of supervisory experience managing store operations and production teams.",
+    "skills": {
+      "item1": "Logo, monogram & brand identity design",
+      "item2": "Social media & Instagram carousel design",
+      "item3": "YouTube thumbnails & poster design",
+      "item4": "Advanced photo retouching & manipulation",
+      "item5": "Restaurant menu design & layout",
+      "item6": "Print-ready pre-flight file preparation",
+      "item7": "UV printing & specialized machine operation",
+      "item8": "Large format banner printing & production",
+      "item9": "Sticker production & precision vinyl cutting",
+      "item10": "SignMaster cutting software mastery",
+      "item11": "Roland VersaWorks RIP software",
+      "item12": "CorelDRAW vector graphics",
+      "item13": "AI-assisted design workflows",
+      "item14": "MS Word & PowerPoint document design",
+      "item15": "Store & production operations management"
+    }
+  },
+  "skills": {
+    "badge": "TECHNICAL PROFICIENCY",
+    "title": "Software & Machine Expertise",
+    "subtitle": "Mastery across leading graphic design software, RIP machine controllers, and office suites.",
+    "tabDesign": "Graphic Design",
+    "tabPrint": "Print & Plotter RIP",
+    "tabOffice": "Office Suite",
+    "distributionTitle": "Overall Skill Proficiency Distribution"
+  },
+  "experience": {
+    "badge": "CAREER PATH & ACADEMICS",
+    "title": "Professional Experience & Education",
+    "subtitle": "6+ years of hands-on graphic design, store management, and print machine operation across Bangladesh and Saudi Arabia.",
+    "tabExperience": "Work Experience",
+    "tabEducation": "Education & Certification"
+  },
+  "services": {
+    "badge": "WHAT I OFFER",
+    "title": "Design & Production Services",
+    "subtitle": "From creative conceptualization to high-precision print production and machine RIP setups.",
+    "requestService": "Request Service"
+  },
+  "portfolio": {
+    "badge": "FEATURED WORK",
+    "title": "Portfolio & Creative Showcase",
+    "subtitle": "Selected branding, digital design, and physical print production projects completed across 6+ years.",
+    "all": "All Projects",
+    "brandIdentity": "Brand Identity",
+    "socialMedia": "Social Media",
+    "printUv": "Print & UV",
+    "signage": "Signage & Plotter",
+    "viewDetails": "View Project Details",
+    "back": "Back to Portfolio",
+    "overview": "Project Overview",
+    "challenge": "The Challenge",
+    "concept": "Creative Concept & Execution",
+    "tools": "Tools & Software Used"
+  },
+  "testimonials": {
+    "badge": "TESTIMONIALS",
+    "title": "What Colleagues & Employers Say",
+    "subtitle": "Feedback on design quality, print efficiency, and operational leadership."
+  },
+  "cta": {
+    "title": "Ready to bring your creative brand & print ideas to life?",
+    "description": "Whether you need a high-impact logo, social media branding, or production-ready print setup, let's build something exceptional together.",
+    "button": "Start a Project"
+  },
+  "contact": {
+    "badge": "GET IN TOUCH",
+    "title": "Contact & Inquiry",
+    "subtitle": "Have a project in mind or need expert graphic design & print machine operator services? Send a direct message below.",
+    "workTogether": "Let's Work Together",
+    "workTogetherDesc": "Available for freelance graphic design projects, branding assignments, and full-time printing machine operator roles.",
+    "phone": "Phone / WhatsApp",
+    "email": "Direct Email",
+    "location": "Current Location",
+    "locationVal": "Al Hasa, Saudi Arabia",
+    "responseNotice": "Fast response time within 24 hours.",
+    "nameLabel": "Your Name",
+    "namePlaceholder": "John Doe",
+    "emailLabel": "Your Email",
+    "emailPlaceholder": "john@example.com",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "Project Inquiry / Job Opportunity",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Describe your design or print project details...",
+    "sendButton": "Send Message",
+    "successTitle": "Message Received!",
+    "successDesc": "Thank you for reaching out. I will review your message and reply as soon as possible."
+  },
+  "footer": {
+    "brandSubtitle": "Graphic Designer & Print Machine Operator",
+    "rights": "All rights reserved.",
+    "scrollToTop": "Scroll to top"
+  }
+}

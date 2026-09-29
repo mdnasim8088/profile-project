@@ -1,0 +1,393 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-orange: #F05A1A;
+  --color-dark-orange: #D94A10;
+  --color-deep-orange: #B83D0C;
+  --color-light-orange: #F05A1A15;
+  --color-very-light-orange: #F05A1A0A;
+
+  --color-primary-text: #17140F;
+  --color-secondary-text: #5C564E;
+  --color-muted-text: #8F877C;
+  --color-border: #E4DDD2;
+  --color-soft-bg: #EFEAE2;
+  --color-ink: #17140F;
+  --color-ink-soft: #221E19;
+}
+
+/* Warm light theme: paper background, ink text, ember-orange accent */
+:root {
+  --bg-primary: #F7F4EF;
+  --bg-secondary: #EFEAE2;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #FFFFFF;
+  --text-primary: #17140F;
+  --text-secondary: #5C564E;
+  --accent-orange: #F05A1A;
+  --border-color: #E4DDD2;
+  --ink: #17140F;
+}
+
+/* Typography: Sora (display) + Manrope (body) + JetBrains Mono (tags) */
+@theme inline {
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
+  --font-display: var(--font-sora), var(--font-manrope), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+body {
+  background-color: #F7F4EF;
+  color: #17140F;
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  overflow-x: hidden;
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sora), var(--font-manrope), system-ui, sans-serif;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+h1 {
+  letter-spacing: -0.045em;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Arabic uses IBM Plex Sans Arabic throughout, with normal tracking */
+[dir="rtl"] body,
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3,
+[dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 {
+  font-family: var(--font-arabic), var(--font-manrope), system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+/* Buttons and inputs inherit the body face */
+button, input, textarea, select {
+  font-family: inherit;
+}
+
+/* Dark Editorial Glass Utilities */
+.glass-dark {
+  background: rgba(247, 244, 239, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #E4DDD2;
+}
+
+.glass-orange {
+  background: rgba(240, 90, 26, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(240, 90, 26, 0.15);
+}
+
+.card-shadow {
+  box-shadow: 0 4px 20px rgba(23, 20, 15, 0.06);
+}
+
+.card-shadow-hover {
+  box-shadow: 0 10px 30px rgba(240, 90, 26, 0.12);
+}
+
+/* Signature ember gradient: amber -> orange -> deep red-orange */
+@utility bg-orange-grad {
+  background-image: linear-gradient(135deg, #FF9A4D 0%, #F05A1A 52%, #D6360E 100%);
+}
+
+@utility text-gradient-orange {
+  background-image: linear-gradient(120deg, #FF8A3D 0%, #F05A1A 50%, #D6360E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F4EF;
+}
+::-webkit-scrollbar-thumb {
+  background: #D6CEC2;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F05A1A;
+}
+
+/* Animated Background Keyframes */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-40px, 40px) scale(1.08);
+  }
+  66% {
+    transform: translate(25px, -30px) scale(0.92);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 12s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 15s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 6s ease-in-out infinite;
+}
+
+/* Interactive Click & Tap Button Styles */
+button, a.btn-interactive, .clickable-element {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+button:active, a.btn-interactive:active {
+  transform: scale(0.97) translateY(1px) !important;
+}
+
+
+/* ---------- Editorial agency elements ---------- */
+
+/* [ bracket label ] eyebrow */
+.bracket-label {
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #5C564E;
+}
+.bracket-label::before,
+.bracket-label::after {
+  color: #F05A1A;
+  font-weight: 400;
+  font-size: 1.35em;
+  letter-spacing: 0;
+}
+.bracket-label::before { content: "["; }
+.bracket-label::after { content: "]"; }
+
+/* Thin wireframe box with corner tag, used around the hero portrait */
+.wire-box {
+  position: absolute;
+  border: 1px solid rgba(23, 20, 15, 0.14);
+  pointer-events: none;
+}
+.wire-tag {
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  position: absolute;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #5C564E;
+  background: #F7F4EF;
+  padding: 0 4px;
+  white-space: nowrap;
+}
+
+/* Design-tool selection handles on a framed element */
+.selection-frame {
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid #F05A1A;
+  pointer-events: none;
+}
+.selection-frame > i {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background: #FFFFFF;
+  border: 1.5px solid #F05A1A;
+}
+.selection-frame > i:nth-child(1) { top: -5px; left: -5px; }
+.selection-frame > i:nth-child(2) { top: -5px; right: -5px; }
+.selection-frame > i:nth-child(3) { bottom: -5px; left: -5px; }
+.selection-frame > i:nth-child(4) { bottom: -5px; right: -5px; }
+.selection-frame > i:nth-child(5) { top: -5px; left: calc(50% - 4.5px); }
+.selection-frame > i:nth-child(6) { bottom: -5px; left: calc(50% - 4.5px); }
+
+/* Glowing rule with dot terminals */
+.glow-line {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #F05A1A 20%, #FF7A3D 50%, #F05A1A 80%, transparent);
+  box-shadow: 0 0 12px rgba(240, 90, 26, 0.55);
+}
+.glow-line::before,
+.glow-line::after {
+  content: "";
+  position: absolute;
+  top: -2.5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: #FF7A3D;
+  box-shadow: 0 0 10px #F05A1A;
+}
+.glow-line::before { left: 18%; }
+.glow-line::after { right: 18%; }
+
+/* Numbered square, as in "01 / 02 / 03" step cards */
+.num-box {
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border: 1px solid #E4DDD2;
+  background: #F7F4EF;
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #8F877C;
+  font-variant-numeric: tabular-nums;
+  transition: all 0.3s ease;
+}
+.group:hover .num-box {
+  color: #F05A1A;
+  border-color: #F05A1A;
+  background: rgba(240, 90, 26, 0.06);
+}
+
+/* Blueprint grid for dark ink panels */
+.ink-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 5rem 5rem;
+}
+
+/* ---------- Background motion ---------- */
+
+@keyframes grid-drift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 64px 64px, 64px 64px; }
+}
+.bg-grid-drift {
+  background-image:
+    linear-gradient(to right, rgba(23, 20, 15, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23, 20, 15, 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+  animation: grid-drift 18s linear infinite;
+}
+
+.bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Hero portrait ---------- */
+
+/* Comet-tail gradient ring orbiting the round portrait */
+.ring-comet {
+  background: conic-gradient(from 0deg, transparent 0%, #FF9A4D 22%, #F05A1A 40%, #D6360E 50%, transparent 62%);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+}
+
+/* Rotating circular text badge */
+@keyframes spin-badge {
+  to { transform: rotate(360deg); }
+}
+.spin-badge {
+  animation: spin-badge 18s linear infinite;
+}
+
+/* Light sweep across primary buttons */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.45) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+}
+.btn-shine:hover::after {
+  transform: translateX(120%);
+}
+
+/* Scroll cue: dot travelling down a mouse outline */
+@keyframes scroll-cue {
+  0% { transform: translateY(0); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translateY(12px); opacity: 0; }
+}
+.scroll-cue {
+  animation: scroll-cue 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
