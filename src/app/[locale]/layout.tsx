@@ -29,7 +29,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const fontVars = [sora, manrope, jetbrainsMono, ibmPlexArabic].map((f) => f.variable).join(" ");
 
   return (
-    <html lang={locale} dir={isRtl ? "rtl" : "ltr"} className={fontVars}>
+    <html lang={locale} dir={isRtl ? "rtl" : "ltr"} translate="no" className={fontVars}>
       <body className={`bg-[#F7F4EF] text-[#17140F] antialiased min-h-screen flex flex-col justify-between selection:bg-[#F05A1A] selection:text-white relative`}>
         <AnimatedBackground />
         <NextIntlClientProvider messages={messages} locale={locale}>
