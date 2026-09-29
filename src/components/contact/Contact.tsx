@@ -178,7 +178,7 @@ export function Contact() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="group/field space-y-2.5">
-                    <label className="text-[11px] font-bold text-[#5C564E] group-focus-within/field:text-[#F05A1A] uppercase tracking-wider pl-1 transition-colors">{t("nameLabel")}</label>
+                    <label className="text-[11px] font-bold text-[#5C564E] group-focus-within/field:text-[#F05A1A] uppercase tracking-wider ps-1 transition-colors">{t("nameLabel")}</label>
                     <div className="field-frame">
                       <input
                         type="text"
@@ -192,7 +192,7 @@ export function Contact() {
                   </div>
 
                   <div className="group/field space-y-2.5">
-                    <label className="text-[11px] font-bold text-[#5C564E] group-focus-within/field:text-[#F05A1A] uppercase tracking-wider pl-1 transition-colors">{t("emailLabel")}</label>
+                    <label className="text-[11px] font-bold text-[#5C564E] group-focus-within/field:text-[#F05A1A] uppercase tracking-wider ps-1 transition-colors">{t("emailLabel")}</label>
                     <div className="field-frame">
                       <input
                         type="email"
@@ -207,7 +207,7 @@ export function Contact() {
                 </div>
 
                 <div className="group/field space-y-2.5">
-                  <label className="text-[11px] font-bold text-[#5C564E] group-focus-within/field:text-[#F05A1A] uppercase tracking-wider pl-1 transition-colors">{t("subjectLabel")}</label>
+                  <label className="text-[11px] font-bold text-[#5C564E] group-focus-within/field:text-[#F05A1A] uppercase tracking-wider ps-1 transition-colors">{t("subjectLabel")}</label>
                   <div className="field-frame">
                     <input
                       type="text"
@@ -221,7 +221,7 @@ export function Contact() {
                 </div>
 
                 <div className="group/field space-y-2.5">
-                  <label className="text-[11px] font-bold text-[#5C564E] group-focus-within/field:text-[#F05A1A] uppercase tracking-wider pl-1 transition-colors">{t("messageLabel")}</label>
+                  <label className="text-[11px] font-bold text-[#5C564E] group-focus-within/field:text-[#F05A1A] uppercase tracking-wider ps-1 transition-colors">{t("messageLabel")}</label>
                   <div className="field-frame">
                     <textarea
                       required

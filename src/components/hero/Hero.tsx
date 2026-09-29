@@ -83,7 +83,7 @@ export function Hero() {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between pb-3 relative">
           <span className="bracket-label !text-[10px]">{isAr ? "تصميم وطباعة" : "design & print studio"}</span>
-          <span className="hidden sm:inline-flex items-center gap-1 font-mono text-[11px] font-bold tracking-[0.2em] text-[#17140F]">
+          <span dir="ltr" className="hidden sm:inline font-mono text-[11px] font-bold tracking-[0.2em] whitespace-nowrap text-[#17140F]">
             [ TUS<span className="text-[#F05A1A]">A</span>R ]
           </span>
           <motion.span

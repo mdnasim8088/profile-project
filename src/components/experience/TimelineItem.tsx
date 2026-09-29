@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLocale } from "next-intl";
 import { MapPin, Calendar, Building2, GraduationCap } from "lucide-react";
 
 interface TimelineItemProps {
@@ -22,6 +23,9 @@ export function TimelineItem({
   type,
   idx,
 }: TimelineItemProps) {
+  // Nudge the card away from the timeline line, which sits on the right in Arabic
+  const nudge = useLocale() === "ar" ? -4 : 4;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -35,7 +39,7 @@ export function TimelineItem({
 
       {/* Content Card */}
       <motion.div
-        whileHover={{ x: 4 }}
+        whileHover={{ x: nudge }}
         transition={{ duration: 0.2 }}
         className="glass-card corner-marks p-6 md:p-8 group-hover:border-[#F05A1A] transition-all duration-300 relative overflow-hidden"
       >
