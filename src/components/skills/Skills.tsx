@@ -3,11 +3,10 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { AccentText } from "@/components/ui/AccentText";
-import { motion } from "framer-motion";
 import { skillsData } from "@/data/skills";
 import { CircularSkillCard } from "./CircularSkillCard";
 import { HorizontalSkillBar } from "./HorizontalSkillBar";
-import { Wrench, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 export function Skills() {
   const t = useTranslations("skills");

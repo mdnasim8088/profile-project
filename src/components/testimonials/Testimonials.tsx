@@ -3,7 +3,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { AccentText } from "@/components/ui/AccentText";
-import { MessageSquareQuote, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { Testimonial } from "@/types";
 
 export function Testimonials() {

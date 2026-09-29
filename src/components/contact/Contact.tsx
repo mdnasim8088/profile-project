@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, MessageSquare, CheckCircle2, ExternalLink } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle2, ExternalLink } from "lucide-react";
 
 export function Contact() {
   const t = useTranslations("contact");

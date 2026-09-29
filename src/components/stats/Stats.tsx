@@ -1,13 +1,12 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import { statsData } from "@/data/stats";
 import { Briefcase, Building, Globe, FolderCheck } from "lucide-react";
 
 export function Stats() {
   const locale = useLocale();
-  const t = useTranslations("stats");
   const isAr = locale === "ar";
 
   const icons = [

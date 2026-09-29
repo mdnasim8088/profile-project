@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { AccentText } from "@/components/ui/AccentText";
 import { servicesData } from "@/data/services";
-import { Palette, Share2, Image, Printer, Package, FileCode2, ArrowUpRight } from "lucide-react";
+import { Palette, Share2, Image as ImageIcon, Printer, Package, FileCode2, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 export function Services() {
@@ -15,7 +15,7 @@ export function Services() {
   const iconMap: Record<string, React.ReactNode> = {
     "01": <Palette className="w-7 h-7 text-[#F05A1A] group-hover:text-white transition-colors" />,
     "02": <Share2 className="w-7 h-7 text-[#F05A1A] group-hover:text-white transition-colors" />,
-    "03": <Image className="w-7 h-7 text-[#F05A1A] group-hover:text-white transition-colors" />,
+    "03": <ImageIcon className="w-7 h-7 text-[#F05A1A] group-hover:text-white transition-colors" />,
     "04": <Printer className="w-7 h-7 text-[#F05A1A] group-hover:text-white transition-colors" />,
     "05": <Package className="w-7 h-7 text-[#F05A1A] group-hover:text-white transition-colors" />,
     "06": <FileCode2 className="w-7 h-7 text-[#F05A1A] group-hover:text-white transition-colors" />,

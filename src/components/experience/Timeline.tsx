@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { motion } from "framer-motion";
 import { AccentText } from "@/components/ui/AccentText";
 import { experienceData } from "@/data/experience";
 import { educationData } from "@/data/education";
 import { TimelineItem } from "./TimelineItem";
-import { Briefcase, GraduationCap, History } from "lucide-react";
+import { Briefcase, GraduationCap } from "lucide-react";
 
 export function Timeline() {
   const locale = useLocale();

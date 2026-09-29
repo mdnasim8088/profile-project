@@ -6,7 +6,6 @@ import { AccentText } from "@/components/ui/AccentText";
 import { projectsData } from "@/data/projects";
 import { CategoryFilter } from "./CategoryFilter";
 import { ProjectCard } from "./ProjectCard";
-import { FolderKanban } from "lucide-react";
 
 export function Portfolio() {
   const t = useTranslations("portfolio");
