@@ -33,7 +33,7 @@ export function Footer() {
             href="https://www.behance.net/mdtusardotcom"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-[14px] bg-[#221E19] border border-[#332D26] hover:border-[#F05A1A] hover:bg-orange-grad/10 text-[#A39A8E] hover:text-[#F05A1A] transition-all duration-300 shadow-xs"
+            className="p-3 rounded-[14px] bg-[#221E19] border border-[#332D26] hover:border-[#F05A1A] hover:bg-[#F05A1A]/10 text-[#A39A8E] hover:text-[#F05A1A] transition-all duration-300 shadow-xs"
             aria-label="Behance"
             title="Behance"
           >
@@ -44,7 +44,7 @@ export function Footer() {
             href="https://www.linkedin.com/in/md-tusar-ahammad-nasim-27a011355/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-[14px] bg-[#221E19] border border-[#332D26] hover:border-[#F05A1A] hover:bg-orange-grad/10 text-[#A39A8E] hover:text-[#F05A1A] transition-all duration-300 shadow-xs"
+            className="p-3 rounded-[14px] bg-[#221E19] border border-[#332D26] hover:border-[#F05A1A] hover:bg-[#F05A1A]/10 text-[#A39A8E] hover:text-[#F05A1A] transition-all duration-300 shadow-xs"
             aria-label="LinkedIn"
             title="LinkedIn"
           >
@@ -55,7 +55,7 @@ export function Footer() {
             href="https://wa.me/966538937618"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-[14px] bg-[#221E19] border border-[#332D26] hover:border-[#F05A1A] hover:bg-orange-grad/10 text-[#A39A8E] hover:text-[#F05A1A] transition-all duration-300 shadow-xs"
+            className="p-3 rounded-[14px] bg-[#221E19] border border-[#332D26] hover:border-[#F05A1A] hover:bg-[#F05A1A]/10 text-[#A39A8E] hover:text-[#F05A1A] transition-all duration-300 shadow-xs"
             aria-label="WhatsApp"
             title="WhatsApp"
           >
@@ -64,7 +64,7 @@ export function Footer() {
           {/* Email */}
           <a
             href="mailto:mdnasim8088@gmail.com"
-            className="p-3 rounded-[14px] bg-[#221E19] border border-[#332D26] hover:border-[#F05A1A] hover:bg-orange-grad/10 text-[#A39A8E] hover:text-[#F05A1A] transition-all duration-300 shadow-xs"
+            className="p-3 rounded-[14px] bg-[#221E19] border border-[#332D26] hover:border-[#F05A1A] hover:bg-[#F05A1A]/10 text-[#A39A8E] hover:text-[#F05A1A] transition-all duration-300 shadow-xs"
             aria-label="Email"
             title="Email"
           >

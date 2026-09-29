@@ -46,7 +46,7 @@ export default async function ProjectDetailPage({ params }: Props) {
         {/* Back button */}
         <Link
           href={`/${locale}#portfolio`}
-          className="btn-interactive inline-flex items-center gap-2 text-xs font-bold text-[#1DBF73] hover:text-[#159A5C] transition-colors"
+          className="btn-interactive inline-flex items-center gap-2 text-xs font-bold text-[#F05A1A] hover:text-[#D94A10] transition-colors"
         >
           <ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />
           <span>{t("back")}</span>
@@ -55,11 +55,11 @@ export default async function ProjectDetailPage({ params }: Props) {
         {/* Hero Header */}
         <div className="space-y-4">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="px-3.5 py-1 rounded-full text-xs font-bold bg-[#E8F8F0] text-[#159A5C] border border-[#1DBF73]/30">
+            <span className="px-3.5 py-1 rounded-full text-xs font-bold bg-[#F05A1A14] text-[#D94A10] border border-[#F05A1A]/30">
               {category}
             </span>
             <span className="flex items-center gap-1 text-xs font-bold text-[#74767E]">
-              <Calendar className="w-3.5 h-3.5 text-[#1DBF73]" />
+              <Calendar className="w-3.5 h-3.5 text-[#F05A1A]" />
               <span>{project.year}</span>
             </span>
           </div>
@@ -75,7 +75,7 @@ export default async function ProjectDetailPage({ params }: Props) {
 
         {/* Large Banner Placeholder */}
         <div className="w-full aspect-[21/9] rounded-3xl bg-[#F7F7F7] border border-[#E4E5E7] flex flex-col items-center justify-center p-8 gap-3 shadow-xs">
-          <div className="w-20 h-20 rounded-2xl bg-white border border-[#E4E5E7] flex items-center justify-center text-[#1DBF73] shadow-xs">
+          <div className="w-20 h-20 rounded-2xl bg-white border border-[#E4E5E7] flex items-center justify-center text-[#F05A1A] shadow-xs">
             <Layers className="w-10 h-10" />
           </div>
           <span className="text-xs font-mono font-bold text-[#74767E] tracking-widest uppercase">
@@ -88,7 +88,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           {/* Main Copy */}
           <div className="md:col-span-8 space-y-8">
             <div className="bg-[#F7F7F7] p-8 rounded-3xl border border-[#E4E5E7] space-y-3 shadow-xs">
-              <h2 className="text-xl font-bold text-[#1DBF73]">
+              <h2 className="text-xl font-bold text-[#F05A1A]">
                 {t("overview")}
               </h2>
               <p className="text-sm text-[#62646A] leading-relaxed font-medium">{overview}</p>
@@ -109,7 +109,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           <div className="md:col-span-4 space-y-6">
             <div className="bg-[#F7F7F7] p-6 rounded-3xl border border-[#E4E5E7] space-y-6 shadow-xs">
               <h3 className="text-base font-bold text-[#222325] flex items-center gap-2 border-b border-[#E4E5E7] pb-3">
-                <Wrench className="w-4 h-4 text-[#1DBF73]" />
+                <Wrench className="w-4 h-4 text-[#F05A1A]" />
                 <span>{t("tools")}</span>
               </h3>
 

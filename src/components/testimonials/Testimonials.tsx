@@ -75,7 +75,7 @@ export function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
               whileHover={{ y: -6 }}
-              className="bg-[#FFFFFF] p-8 rounded-[24px] border border-[#E4DDD2] flex flex-col justify-between hover:border-[#F05A1A] hover:shadow-[0_12px_30px_rgba(240,90,26,0.12)] transition-all duration-300 shadow-xs"
+              className="glass-card corner-marks p-8 flex flex-col justify-between hover:border-[#F05A1A] hover:shadow-[0_12px_30px_rgba(240,90,26,0.12)] transition-all duration-300"
             >
               <div className="space-y-6">
                 <div className="flex items-center gap-1.5">

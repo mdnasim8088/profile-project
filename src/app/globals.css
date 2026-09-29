@@ -319,6 +319,164 @@ button:active, a.btn-interactive:active {
   background-size: 5rem 5rem;
 }
 
+/* ---------- Frosted glass surfaces ----------
+   Signature "leaf" shape: three soft corners, one tight corner
+   (bottom-start, so it mirrors correctly in RTL). */
+
+@utility glass-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.38) 100%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 26px;
+  border-end-start-radius: 8px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 1px 2px rgba(23, 20, 15, 0.04),
+    0 14px 34px -16px rgba(23, 20, 15, 0.16);
+}
+
+@utility glass-panel {
+  position: relative;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.22) 100%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  backdrop-filter: blur(24px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 36px;
+  border-end-start-radius: 12px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 24px 60px -28px rgba(23, 20, 15, 0.18);
+}
+
+@utility glass-field {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.4) 100%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  border-end-start-radius: 6px;
+  caret-color: #F05A1A;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(23, 20, 15, 0.04),
+    0 6px 18px -12px rgba(23, 20, 15, 0.18);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  &:hover {
+    border-color: rgba(240, 90, 26, 0.35);
+  }
+  &:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.85);
+    border-color: #F05A1A;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      0 0 0 4px rgba(240, 90, 26, 0.14),
+      0 10px 24px -12px rgba(240, 90, 26, 0.35);
+  }
+  &::placeholder {
+    color: #A39B90;
+  }
+}
+
+/* Wrapper for form fields: lifts on hover and shows the same orange
+   crop marks as the cards, which stay while the field has focus
+   (inputs cannot carry ::before/::after themselves). */
+@utility field-frame {
+  position: relative;
+  display: block;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    width: 12px;
+    height: 12px;
+    border-color: #F05A1A;
+    border-style: solid;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  &::before {
+    top: -5px;
+    right: -5px;
+    border-width: 1.5px 1.5px 0 0;
+    transform: translate(-6px, 6px);
+  }
+  &::after {
+    bottom: -5px;
+    left: -5px;
+    border-width: 0 0 1.5px 1.5px;
+    transform: translate(6px, -6px);
+  }
+  &:hover,
+  &:focus-within {
+    transform: translateY(-2px);
+  }
+  &:hover::before,
+  &:hover::after,
+  &:focus-within::before,
+  &:focus-within::after {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Frosted glass chip for tags and badges inside glass cards */
+@utility glass-chip {
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(10px) saturate(150%);
+  backdrop-filter: blur(10px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 2px 6px -3px rgba(23, 20, 15, 0.12);
+}
+
+@utility glass-pill {
+  background: rgba(255, 255, 255, 0.55);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  backdrop-filter: blur(14px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 9999px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 6px 20px -10px rgba(23, 20, 15, 0.15);
+}
+
+/* Orange printer's crop marks that slide into two corners on hover */
+@utility corner-marks {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    width: 14px;
+    height: 14px;
+    border-color: #F05A1A;
+    border-style: solid;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  &::before {
+    top: 12px;
+    right: 12px;
+    border-width: 1.5px 1.5px 0 0;
+    transform: translate(-6px, 6px);
+  }
+  &::after {
+    bottom: 12px;
+    left: 12px;
+    border-width: 0 0 1.5px 1.5px;
+    transform: translate(6px, -6px);
+  }
+  &:hover::before,
+  &:hover::after {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* ---------- Background motion ---------- */
 
 @keyframes grid-drift {

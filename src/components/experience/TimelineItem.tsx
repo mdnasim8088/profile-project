@@ -37,7 +37,7 @@ export function TimelineItem({
       <motion.div
         whileHover={{ x: 4 }}
         transition={{ duration: 0.2 }}
-        className="bg-[#FFFFFF] p-6 md:p-8 rounded-[20px] border border-[#E4DDD2] group-hover:border-[#F05A1A] transition-all duration-300 shadow-xs relative overflow-hidden"
+        className="glass-card corner-marks p-6 md:p-8 group-hover:border-[#F05A1A] transition-all duration-300 relative overflow-hidden"
       >
         <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-bold tracking-wider bg-[#F05A1A]/10 text-[#F05A1A] border border-[#F05A1A]/20 uppercase">

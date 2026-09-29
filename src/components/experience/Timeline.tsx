@@ -29,13 +29,13 @@ export function Timeline() {
           <div className="glow-line w-48 mt-4" />
 
           {/* Toggle buttons */}
-          <div className="flex flex-wrap justify-center items-center gap-2 p-1.5 rounded-full bg-[#EFEAE2] border border-[#E4DDD2] mt-6 shadow-xs">
+          <div className="glass-pill flex flex-wrap justify-center items-center gap-2 p-1.5 mt-6">
             <button
               onClick={() => setActiveTab("experience")}
               className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer ${
                 activeTab === "experience"
                   ? "bg-orange-grad text-white shadow-xs"
-                  : "text-[#17140F] hover:text-[#F05A1A] hover:bg-orange-grad/10"
+                  : "text-[#17140F] hover:text-[#F05A1A] hover:bg-[#F05A1A]/10"
               }`}
             >
               <Briefcase className="w-4 h-4" />
@@ -46,7 +46,7 @@ export function Timeline() {
               className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer ${
                 activeTab === "education"
                   ? "bg-orange-grad text-white shadow-xs"
-                  : "text-[#17140F] hover:text-[#F05A1A] hover:bg-orange-grad/10"
+                  : "text-[#17140F] hover:text-[#F05A1A] hover:bg-[#F05A1A]/10"
               }`}
             >
               <GraduationCap className="w-4 h-4" />

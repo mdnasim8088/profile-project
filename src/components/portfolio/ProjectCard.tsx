@@ -23,11 +23,11 @@ export function ProjectCard({ project, idx }: ProjectCardProps) {
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: idx * 0.1 }}
       whileHover={{ y: -6 }}
-      className="group relative bg-[#FFFFFF] rounded-[20px] border border-[#E4DDD2] hover:border-[#F05A1A] hover:shadow-[0_12px_30px_rgba(240,90,26,0.12)] overflow-hidden flex flex-col justify-between transition-all duration-300 shadow-xs"
+      className="glass-card corner-marks group relative hover:border-[#F05A1A] hover:shadow-[0_12px_30px_rgba(240,90,26,0.12)] overflow-hidden flex flex-col justify-between transition-all duration-300"
     >
       {/* Project Card Header Image Simulation */}
-      <div className="relative aspect-[16/10] w-full bg-[#EFEAE2] overflow-hidden flex items-center justify-center border-b border-[#E4DDD2]">
-        <div className="w-16 h-16 rounded-2xl bg-[#FFFFFF] border border-[#E4DDD2] flex items-center justify-center text-[#8F877C] group-hover:scale-105 group-hover:text-[#F05A1A] group-hover:border-[#F05A1A] transition-all duration-500 shadow-xs">
+      <div className="relative aspect-[16/10] w-full bg-gradient-to-br from-white/50 via-[#EFEAE2]/40 to-[#F05A1A]/[0.06] backdrop-blur-md overflow-hidden flex items-center justify-center border-b border-white/70">
+        <div className="glass-chip w-16 h-16 rounded-2xl flex items-center justify-center text-[#8F877C] group-hover:scale-105 group-hover:text-[#F05A1A] group-hover:border-[#F05A1A] transition-all duration-500">
           <Layers className="w-8 h-8" />
         </div>
         <span className="absolute top-4 ltr:right-4 rtl:left-4 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-orange-grad text-white shadow-xs">
@@ -54,7 +54,7 @@ export function ProjectCard({ project, idx }: ProjectCardProps) {
           {project.tools.map((tool, tIdx) => (
             <span
               key={tIdx}
-              className="px-2.5 py-1 rounded text-[10px] font-bold bg-[#F7F4EF] text-[#5C564E] border border-[#E4DDD2]"
+              className="glass-chip px-2.5 py-1 rounded-md text-[10px] font-bold text-[#5C564E]"
             >
               {tool}
             </span>
@@ -64,10 +64,12 @@ export function ProjectCard({ project, idx }: ProjectCardProps) {
         {/* Action Link */}
         <Link
           href={`/${locale}/portfolio/${project.slug}`}
-          className="mt-2 pt-4 border-t border-[#E4DDD2] flex items-center justify-between text-xs font-bold text-[#17140F] group-hover:text-[#F05A1A] transition-colors"
+          className="mt-2 pt-4 border-t border-[#E4DDD2]/80 flex items-center justify-between text-xs font-bold text-[#17140F] visited:text-[#17140F] group-hover:text-[#F05A1A] hover:text-[#F05A1A] focus-visible:text-[#F05A1A] focus-visible:outline-none transition-colors"
         >
           <span>{t("viewDetails")}</span>
-          <ExternalLink className="w-4 h-4 rtl:-scale-x-100" />
+          <span className="flex items-center justify-center w-8 h-8 rounded-full glass-chip text-current group-hover:bg-orange-grad group-hover:text-white group-hover:border-transparent transition-all duration-300">
+            <ExternalLink className="w-3.5 h-3.5 rtl:-scale-x-100" />
+          </span>
         </Link>
       </div>
     </motion.div>

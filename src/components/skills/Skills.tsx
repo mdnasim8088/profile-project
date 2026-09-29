@@ -34,13 +34,13 @@ export function Skills() {
           <div className="glow-line w-48 mt-4" />
 
           {/* Category Tabs */}
-          <div className="flex flex-wrap justify-center items-center gap-2 p-1.5 rounded-full bg-[#FFFFFF] border border-[#E4DDD2] mt-6 shadow-xs">
+          <div className="glass-pill flex flex-wrap justify-center items-center gap-2 p-1.5 mt-6">
             <button
               onClick={() => setActiveTab("design")}
               className={`px-6 py-2.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer ${
                 activeTab === "design"
                   ? "bg-orange-grad text-white shadow-xs"
-                  : "text-[#17140F] hover:text-[#F05A1A] hover:bg-orange-grad/10"
+                  : "text-[#17140F] hover:text-[#F05A1A] hover:bg-[#F05A1A]/10"
               }`}
             >
               {t("tabDesign")}
@@ -50,7 +50,7 @@ export function Skills() {
               className={`px-6 py-2.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer ${
                 activeTab === "print"
                   ? "bg-orange-grad text-white shadow-xs"
-                  : "text-[#17140F] hover:text-[#F05A1A] hover:bg-orange-grad/10"
+                  : "text-[#17140F] hover:text-[#F05A1A] hover:bg-[#F05A1A]/10"
               }`}
             >
               {t("tabPrint")}
@@ -60,7 +60,7 @@ export function Skills() {
               className={`px-6 py-2.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer ${
                 activeTab === "office"
                   ? "bg-orange-grad text-white shadow-xs"
-                  : "text-[#17140F] hover:text-[#F05A1A] hover:bg-orange-grad/10"
+                  : "text-[#17140F] hover:text-[#F05A1A] hover:bg-[#F05A1A]/10"
               }`}
             >
               {t("tabOffice")}
@@ -76,7 +76,7 @@ export function Skills() {
         </div>
 
         {/* Detailed Horizontal Progress Bars */}
-        <div className="bg-[#FFFFFF] p-8 md:p-12 rounded-[32px] border border-[#E4DDD2] max-w-5xl mx-auto space-y-8 hover:border-[#F05A1A] transition-colors duration-500 shadow-xs">
+        <div className="glass-panel p-8 md:p-12 max-w-5xl mx-auto space-y-8 hover:border-[#F05A1A] transition-colors duration-500">
           <h3 className="text-2xl font-bold text-[#17140F] flex items-center gap-3">
             <Sparkles className="w-6 h-6 text-[#F05A1A]" />
             <span>{t("distributionTitle")}</span>

@@ -48,7 +48,7 @@ export function Services() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
                 whileHover={{ y: -6 }}
-                className="bg-[#FFFFFF] p-8 rounded-[24px] border border-[#E4DDD2] flex flex-col justify-between hover:border-[#F05A1A] hover:shadow-[0_12px_30px_rgba(240,90,26,0.12)] transition-all duration-300 group relative shadow-xs"
+                className="glass-card corner-marks p-8 flex flex-col justify-between hover:border-[#F05A1A] hover:shadow-[0_12px_30px_rgba(240,90,26,0.12)] transition-all duration-300 group relative"
               >
                 {/* Top Accent & Icon */}
                 <div>
@@ -73,7 +73,7 @@ export function Services() {
                   {features.map((feat, fIdx) => (
                     <span
                       key={fIdx}
-                      className="px-3 py-1.5 rounded-lg text-[11px] font-bold bg-[#F7F4EF] text-[#5C564E] border border-[#E4DDD2]"
+                      className="glass-chip px-3 py-1.5 rounded-lg text-[11px] font-bold text-[#5C564E]"
                     >
                       {feat}
                     </span>

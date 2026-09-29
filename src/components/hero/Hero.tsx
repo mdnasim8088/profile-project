@@ -100,8 +100,8 @@ export function Hero() {
         <motion.div variants={container} initial="hidden" animate="show" className="lg:col-span-7 flex flex-col">
           <motion.div variants={item} className="flex items-center gap-3 mb-6">
             <span className="relative flex w-2.5 h-2.5">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-[#22A06B] opacity-60 animate-ping" />
-              <span className="relative inline-flex w-2.5 h-2.5 rounded-full bg-[#22A06B]" />
+              <span className="absolute inline-flex h-full w-full rounded-full bg-[#F05A1A] opacity-60 animate-ping" />
+              <span className="relative inline-flex w-2.5 h-2.5 rounded-full bg-[#F05A1A]" />
             </span>
             <span className="bracket-label">{t("greeting")}</span>
           </motion.div>

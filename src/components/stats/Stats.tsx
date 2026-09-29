@@ -28,7 +28,7 @@ export function Stats() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               whileHover={{ y: -4 }}
-              className="bg-[#FFFFFF] p-6 rounded-2xl border border-[#E4DDD2] flex flex-col gap-3 hover:border-[#F05A1A] hover:shadow-[0_8px_20px_rgba(240,90,26,0.08)] transition-all duration-300 group cursor-default shadow-xs"
+              className="glass-card corner-marks p-6 flex flex-col gap-3 hover:border-[#F05A1A] hover:shadow-[0_8px_20px_rgba(240,90,26,0.08)] transition-all duration-300 group cursor-default"
             >
               <div className="p-3 rounded-xl bg-[#F05A1A]/10 w-fit group-hover:bg-orange-grad transition-colors">
                 {icons[idx % icons.length]}

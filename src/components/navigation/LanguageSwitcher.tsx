@@ -34,7 +34,7 @@ export function LanguageSwitcher() {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.94 }}
       onClick={toggleLanguage}
-      className="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#FFFFFF] text-[#F05A1A] border border-[#F05A1A]/40 hover:bg-orange-grad/10 hover:text-[#FF7A3D] transition-all duration-200 shadow-sm cursor-pointer"
+      className="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#FFFFFF] text-[#F05A1A] border border-[#F05A1A]/40 hover:bg-[#F05A1A]/10 hover:text-[#FF7A3D] transition-all duration-200 shadow-sm cursor-pointer"
       title={locale === "en" ? "Switch to Arabic" : "Switch to English"}
     >
       <Globe className="w-3.5 h-3.5 text-current" />
