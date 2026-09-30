@@ -12,14 +12,14 @@ export function CTA() {
   const t = useTranslations("cta");
 
   return (
-    <section className="py-20 bg-transparent relative overflow-hidden">
+    <section className="py-12 md:py-20 bg-transparent relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl p-10 md:p-16 bg-[#17140F] ink-grid border border-[#F05A1A]/30 shadow-[0_24px_60px_rgba(23,20,15,0.25)] flex flex-col items-center text-center gap-6 overflow-hidden"
+          className="relative rounded-3xl px-6 py-10 md:p-16 bg-[#17140F] ink-grid border border-[#F05A1A]/30 shadow-[0_24px_60px_rgba(23,20,15,0.25)] flex flex-col items-center text-center gap-6 overflow-hidden"
         >
           {/* Ember glow, like the lit object in a dark studio shot */}
           <div className="absolute -bottom-40 left-1/2 -translate-x-1/2 w-[640px] h-[360px] rounded-full bg-[radial-gradient(ellipse,rgba(240,90,26,0.45)_0%,rgba(240,90,26,0.1)_45%,transparent_70%)] blur-2xl pointer-events-none" />

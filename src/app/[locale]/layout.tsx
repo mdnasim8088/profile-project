@@ -34,7 +34,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <AnimatedBackground />
         <NextIntlClientProvider messages={messages} locale={locale}>
           <Navbar />
-          <main className="flex-grow relative z-10">{children}</main>
+          <main className="flex-grow relative z-10 overflow-x-clip">{children}</main>
           <Footer />
         </NextIntlClientProvider>
       </body>

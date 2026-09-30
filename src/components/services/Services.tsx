@@ -22,10 +22,10 @@ export function Services() {
   };
 
   return (
-    <section id="services" className="py-32 bg-[#EFEAE2]/55 border-t border-[#E4DDD2] relative">
+    <section id="services" className="py-16 md:py-32 bg-[#EFEAE2]/55 border-t border-[#E4DDD2] relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
-        <div className="flex flex-col items-center text-center gap-4 mb-20">
+        <div className="flex flex-col items-center text-center gap-4 mb-12 md:mb-20">
           <span className="bracket-label mb-2">{t("badge")}</span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#17140F] tracking-tight">
             <AccentText text={t("title")} />
@@ -37,7 +37,7 @@ export function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
           {servicesData.map((service, idx) => {
             const features = isAr ? service.featuresAr : service.features;
             return (
@@ -48,11 +48,11 @@ export function Services() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
                 whileHover={{ y: -6 }}
-                className="glass-card corner-marks p-8 flex flex-col justify-between hover:border-[#F05A1A] hover:shadow-[0_12px_30px_rgba(240,90,26,0.12)] transition-all duration-300 group relative"
+                className="glass-card corner-marks p-6 md:p-8 flex flex-col justify-between hover:border-[#F05A1A] hover:shadow-[0_12px_30px_rgba(240,90,26,0.12)] transition-all duration-300 group relative"
               >
                 {/* Top Accent & Icon */}
                 <div>
-                  <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center justify-between mb-6 md:mb-8">
                     <div className="p-4 rounded-[18px] bg-[#F05A1A]/10 border border-[#F05A1A]/20 group-hover:bg-orange-grad transition-colors">
                       {iconMap[service.number] || <Palette className="w-7 h-7 text-[#F05A1A] group-hover:text-white transition-colors" />}
                     </div>
@@ -63,13 +63,13 @@ export function Services() {
                     {isAr ? service.titleAr : service.title}
                   </h3>
 
-                  <p className="text-sm text-[#5C564E] leading-relaxed mb-8 font-medium">
+                  <p className="text-sm text-[#5C564E] leading-relaxed mb-6 md:mb-8 font-medium">
                     {isAr ? service.descriptionAr : service.description}
                   </p>
                 </div>
 
                 {/* Service Features Tag List */}
-                <div className="pt-6 border-t border-[#E4DDD2] flex flex-wrap gap-2">
+                <div className="pt-5 md:pt-6 border-t border-[#E4DDD2] flex flex-wrap gap-2">
                   {features.map((feat, fIdx) => (
                     <span
                       key={fIdx}
@@ -83,7 +83,7 @@ export function Services() {
                 {/* CTA Link */}
                 <Link
                   href={`/${locale}#contact`}
-                  className="mt-8 flex items-center gap-2 text-[13px] font-bold text-[#17140F] group-hover:text-[#F05A1A] transition-colors w-fit"
+                  className="mt-4 py-2 md:mt-8 md:py-0 flex items-center gap-2 text-[13px] font-bold text-[#17140F] group-hover:text-[#F05A1A] transition-colors w-fit"
                 >
                   <span>{t("requestService")}</span>
                   <ArrowUpRight className="w-4 h-4 rtl:-scale-x-100" />

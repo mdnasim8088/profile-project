@@ -17,9 +17,9 @@ export function Stats() {
   ];
 
   return (
-    <section className="py-16 bg-[#EFEAE2]/55 border-y border-[#E4DDD2] relative overflow-hidden">
+    <section className="py-10 md:py-16 bg-[#EFEAE2]/55 border-y border-[#E4DDD2] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {statsData.map((stat, idx) => (
             <motion.div
               key={stat.id}
@@ -28,7 +28,7 @@ export function Stats() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               whileHover={{ y: -4 }}
-              className="glass-card corner-marks p-6 flex flex-col gap-3 hover:border-[#F05A1A] hover:shadow-[0_8px_20px_rgba(240,90,26,0.08)] transition-all duration-300 group cursor-default"
+              className="glass-card corner-marks p-5 md:p-6 flex flex-col gap-3 hover:border-[#F05A1A] hover:shadow-[0_8px_20px_rgba(240,90,26,0.08)] transition-all duration-300 group cursor-default"
             >
               <div className="p-3 rounded-xl bg-[#F05A1A]/10 w-fit group-hover:bg-orange-grad transition-colors">
                 {icons[idx % icons.length]}

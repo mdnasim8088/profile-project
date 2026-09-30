@@ -51,10 +51,10 @@ export function Testimonials() {
   ];
 
   return (
-    <section className="py-32 bg-[#EFEAE2]/55 border-t border-[#E4DDD2] relative">
+    <section className="py-16 md:py-32 bg-[#EFEAE2]/55 border-t border-[#E4DDD2] relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
-        <div className="flex flex-col items-center text-center gap-4 mb-20">
+        <div className="flex flex-col items-center text-center gap-4 mb-12 md:mb-20">
           <span className="bracket-label mb-2">{t("badge")}</span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#17140F] tracking-tight">
             <AccentText text={t("title")} />
@@ -66,7 +66,7 @@ export function Testimonials() {
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
           {reviews.map((rev, idx) => (
             <motion.div
               key={rev.id}
@@ -75,7 +75,7 @@ export function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
               whileHover={{ y: -6 }}
-              className="glass-card corner-marks p-8 flex flex-col justify-between hover:border-[#F05A1A] hover:shadow-[0_12px_30px_rgba(240,90,26,0.12)] transition-all duration-300"
+              className="glass-card corner-marks p-6 md:p-8 flex flex-col justify-between hover:border-[#F05A1A] hover:shadow-[0_12px_30px_rgba(240,90,26,0.12)] transition-all duration-300"
             >
               <div className="space-y-6">
                 <div className="flex items-center gap-1.5">
@@ -88,7 +88,7 @@ export function Testimonials() {
                 </p>
               </div>
 
-              <div className="pt-8 mt-8 border-t border-[#E4DDD2] flex flex-col">
+              <div className="pt-6 mt-6 md:pt-8 md:mt-8 border-t border-[#E4DDD2] flex flex-col">
                 <span className="text-base font-bold text-[#17140F] tracking-tight">
                   {isAr ? rev.nameAr : rev.name}
                 </span>

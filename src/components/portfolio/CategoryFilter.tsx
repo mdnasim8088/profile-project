@@ -13,7 +13,7 @@ export function CategoryFilter({
   onSelectCategory,
 }: CategoryFilterProps) {
   return (
-    <div className="glass-pill flex flex-wrap items-center justify-center gap-2 p-1.5 mb-16 w-fit mx-auto">
+    <div className="glass-pill flex flex-wrap items-center justify-center gap-2 p-1.5 mb-10 md:mb-16 w-fit mx-auto">
       {categories.map((cat) => {
         const isActive = activeCategory === cat.id;
         return (

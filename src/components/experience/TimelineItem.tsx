@@ -32,7 +32,7 @@ export function TimelineItem({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: idx * 0.1 }}
-      className="relative ltr:pl-8 md:ltr:pl-12 rtl:pr-8 md:rtl:pr-12 pb-12 last:pb-0 group"
+      className="relative ltr:pl-8 md:ltr:pl-12 rtl:pr-8 md:rtl:pr-12 pb-8 md:pb-12 last:pb-0 group"
     >
       {/* Premium Marker: Dark Center + Orange Border */}
       <div className="absolute top-2 ltr:left-0 rtl:right-0 -translate-x-[5px] rtl:translate-x-[5px] w-[12px] h-[12px] rounded-full bg-[#FFFFFF] border-2 border-[#F05A1A] group-hover:bg-orange-grad group-hover:scale-125 transition-all duration-300 z-10 shadow-xs" />
@@ -41,7 +41,7 @@ export function TimelineItem({
       <motion.div
         whileHover={{ x: nudge }}
         transition={{ duration: 0.2 }}
-        className="glass-card corner-marks p-6 md:p-8 group-hover:border-[#F05A1A] transition-all duration-300 relative overflow-hidden"
+        className="glass-card corner-marks p-5 md:p-8 group-hover:border-[#F05A1A] transition-all duration-300 relative overflow-hidden"
       >
         <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-bold tracking-wider bg-[#F05A1A]/10 text-[#F05A1A] border border-[#F05A1A]/20 uppercase">

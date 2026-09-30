@@ -20,10 +20,10 @@ export function Skills() {
   });
 
   return (
-    <section id="skills" className="py-32 bg-[#EFEAE2]/55 border-t border-[#E4DDD2] relative">
+    <section id="skills" className="py-16 md:py-32 bg-[#EFEAE2]/55 border-t border-[#E4DDD2] relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center gap-4 mb-20">
+        <div className="flex flex-col items-center text-center gap-4 mb-12 md:mb-20">
           <span className="bracket-label mb-2">{t("badge")}</span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#17140F] tracking-tight">
             <AccentText text={t("title")} />
@@ -69,19 +69,19 @@ export function Skills() {
         </div>
 
         {/* Circular Skill Cards Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6 mb-24">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6 mb-12 md:mb-24">
           {filteredSkills.map((skill, idx) => (
             <CircularSkillCard key={skill.id} skill={skill} idx={idx} />
           ))}
         </div>
 
         {/* Detailed Horizontal Progress Bars */}
-        <div className="glass-panel p-8 md:p-12 max-w-5xl mx-auto space-y-8 hover:border-[#F05A1A] transition-colors duration-500">
+        <div className="glass-panel p-6 md:p-12 max-w-5xl mx-auto space-y-6 md:space-y-8 hover:border-[#F05A1A] transition-colors duration-500">
           <h3 className="text-2xl font-bold text-[#17140F] flex items-center gap-3">
             <Sparkles className="w-6 h-6 text-[#F05A1A]" />
             <span>{t("distributionTitle")}</span>
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 pt-4 border-t border-[#E4DDD2]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 md:gap-y-8 pt-4 border-t border-[#E4DDD2]">
             {skillsData.map((skill, idx) => (
               <HorizontalSkillBar key={skill.id} skill={skill} idx={idx} />
             ))}

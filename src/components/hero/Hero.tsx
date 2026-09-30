@@ -73,7 +73,7 @@ export function Hero() {
     : "GRAPHIC DESIGNER • PRINT SPECIALIST • ";
 
   return (
-    <section className="relative min-h-screen pt-36 pb-24 flex items-center justify-center overflow-hidden bg-transparent">
+    <section className="relative pt-32 pb-14 md:min-h-screen md:pt-36 md:pb-24 flex items-center justify-center overflow-hidden bg-transparent">
       {/* Top meta strip, like a presentation slide header */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -95,7 +95,7 @@ export function Hero() {
         </div>
       </motion.div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-20 items-center relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-20 items-center relative z-10 w-full">
         {/* Left Column: Text & CTAs */}
         <motion.div variants={container} initial="hidden" animate="show" className="lg:col-span-7 flex flex-col">
           <motion.div variants={item} className="flex items-center gap-3 mb-6">
@@ -117,12 +117,12 @@ export function Hero() {
             </motion.h2>
           </div>
 
-          <motion.p variants={item} className="text-base md:text-lg text-[#5C564E] max-w-xl leading-relaxed mb-10 font-medium">
+          <motion.p variants={item} className="text-base md:text-lg text-[#5C564E] max-w-xl leading-relaxed mb-8 md:mb-10 font-medium">
             {t("description")}
           </motion.p>
 
           {/* CTAs */}
-          <motion.div variants={item} className="flex flex-wrap items-center gap-4 mb-12">
+          <motion.div variants={item} className="flex flex-wrap items-center gap-4 mb-8 md:mb-12">
             <Link
               href={`/${locale}#portfolio`}
               className="btn-shine group inline-flex items-center gap-3 ps-8 pe-2 py-2 rounded-full font-bold text-sm text-white bg-[#17140F] shadow-[0_10px_30px_rgba(23,20,15,0.18)] hover:shadow-[0_14px_36px_rgba(240,90,26,0.3)] transition-shadow duration-300"
@@ -164,7 +164,7 @@ export function Hero() {
           </motion.div>
 
           {/* Highlights */}
-          <motion.div variants={item} className="flex flex-wrap items-center gap-3 pt-10 mt-10 border-t border-[#E4DDD2]">
+          <motion.div variants={item} className="flex flex-wrap items-center gap-3 pt-8 mt-8 md:pt-10 md:mt-10 border-t border-[#E4DDD2]">
             {[
               { icon: ShieldCheck, label: t("quality") },
               { icon: Palette, label: t("identity") },
@@ -183,14 +183,14 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="lg:col-span-5 flex justify-center lg:justify-end relative items-center py-10"
+          className="order-first md:order-none lg:col-span-5 flex justify-center lg:justify-end relative items-center pt-4 pb-10 md:py-10"
         >
-          <div className="group relative w-[300px] h-[375px] md:w-[400px] md:h-[500px]">
+          <div className="group relative w-[270px] min-[375px]:w-[290px] min-[414px]:w-[310px] max-w-[calc(100%-2rem)] aspect-[4/5] md:max-w-full md:w-[400px] md:h-[500px]">
             {/* Wireframe boxes with [tags] */}
             <div className="hidden md:block">
               {[
                 { cls: "top-[6%] -left-20 w-36 h-28", tag: "top-2 left-2", text: isAr ? "تصميم" : "design", d: 0.9 },
-                { cls: "top-[52%] -right-24 w-32 h-36", tag: "bottom-2 right-2", text: isAr ? "طباعة" : "print", d: 1.05 },
+                { cls: "top-[52%] -right-24 lg:-right-12 min-[1440px]:-right-24 w-32 h-36", tag: "bottom-2 right-2", text: isAr ? "طباعة" : "print", d: 1.05 },
                 { cls: "-bottom-10 left-[4%] w-44 h-24", tag: "bottom-2 left-2", text: isAr ? "هوية بصرية" : "branding", d: 1.2 },
                 { cls: "top-0 right-[2%] w-24 h-20", tag: "top-2 right-2", text: "UV", d: 1.35 },
               ].map((b) => (
@@ -242,7 +242,7 @@ export function Hero() {
                   src="/images/profile-fiverr.png"
                   alt={isAr ? "توسار أحمد - مصمم جرافيك ومشغل ماكينات طباعة" : "Tusar Ahammad - Graphic Designer & Print Operator"}
                   fill
-                  sizes="(max-width: 768px) 300px, 400px"
+                  sizes="(max-width: 768px) 310px, 400px"
                   className="object-contain object-bottom"
                   priority
                 />
@@ -256,7 +256,7 @@ export function Hero() {
                   src="/images/profile-fiverr.png"
                   alt=""
                   fill
-                  sizes="(max-width: 768px) 300px, 400px"
+                  sizes="(max-width: 768px) 310px, 400px"
                   className="object-contain object-bottom drop-shadow-[0_-4px_18px_rgba(23,20,15,0.18)]"
                   priority
                 />
@@ -268,16 +268,16 @@ export function Hero() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0, y: [0, -8, 0] }}
               transition={{ opacity: { delay: 1 }, x: { delay: 1, duration: 0.6 }, y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.6 } }}
-              className="absolute top-[24%] -right-6 md:-right-14 flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/90 backdrop-blur-md border border-[#E4DDD2] shadow-[0_12px_30px_rgba(23,20,15,0.12)] z-20"
+              className="absolute top-[19%] -right-5 md:top-[24%] md:-right-14 lg:-right-10 min-[1320px]:-right-14 flex items-center gap-1.5 md:gap-3 px-2 py-1.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl bg-white/90 backdrop-blur-md border border-[#E4DDD2] shadow-[0_12px_30px_rgba(23,20,15,0.12)] z-20"
             >
-              <div className="w-9 h-9 rounded-xl bg-orange-grad flex items-center justify-center shrink-0 shadow-[0_6px_14px_rgba(240,90,26,0.35)]">
-                <Zap className="w-4 h-4 text-white" />
+              <div className="w-6 h-6 md:w-9 md:h-9 rounded-lg md:rounded-xl bg-orange-grad flex items-center justify-center shrink-0 shadow-[0_6px_14px_rgba(240,90,26,0.35)]">
+                <Zap className="w-3 h-3 md:w-4 md:h-4 text-white" />
               </div>
               <div className="flex flex-col pe-1">
-                <span className="text-[10px] text-[#8F877C] uppercase tracking-widest font-bold">
+                <span className="text-[8px] md:text-[10px] leading-tight text-[#8F877C] uppercase tracking-wider md:tracking-widest font-bold">
                   {isAr ? "تخصص" : "Expert"}
                 </span>
-                <span className="text-sm font-bold text-[#17140F]">
+                <span className="text-[11px] md:text-sm leading-tight font-bold text-[#17140F]">
                   {isAr ? "خبير طباعة وبلوتر" : "Print & Plotter RIP"}
                 </span>
               </div>
@@ -288,11 +288,11 @@ export function Hero() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0, y: [0, 8, 0] }}
               transition={{ opacity: { delay: 1.2 }, x: { delay: 1.2, duration: 0.6 }, y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.8 } }}
-              className="absolute bottom-[20%] -left-6 md:-left-14 flex items-center gap-3 px-4 py-3 rounded-2xl bg-[#17140F] shadow-[0_12px_30px_rgba(23,20,15,0.3)] z-20"
+              className="absolute bottom-[7%] -left-3 md:bottom-[20%] md:-left-14 flex items-center gap-1.5 md:gap-3 px-2.5 py-1.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl bg-[#17140F] shadow-[0_12px_30px_rgba(23,20,15,0.3)] z-20"
             >
-              <span className="font-display text-3xl font-extrabold text-gradient-orange leading-none">6+</span>
+              <span className="font-display text-lg md:text-3xl font-extrabold text-gradient-orange leading-none">6+</span>
               <div className="flex flex-col pe-1">
-                <span className="text-[11px] font-bold text-white leading-tight">
+                <span className="text-[9px] md:text-[11px] font-bold text-white leading-tight">
                   {isAr ? "سنوات خبرة" : <>Years of<br />Experience</>}
                 </span>
               </div>
@@ -302,7 +302,7 @@ export function Hero() {
             <Link
               href={`/${locale}#contact`}
               aria-label={t("ctaContact")}
-              className="group absolute -bottom-8 -right-4 md:-right-8 w-28 h-28 rounded-full bg-white/90 backdrop-blur border border-[#E4DDD2] shadow-[0_12px_30px_rgba(23,20,15,0.12)] z-30 flex items-center justify-center"
+              className="group absolute -bottom-5 -right-2 md:-bottom-8 md:-right-8 w-20 h-20 md:w-28 md:h-28 rounded-full bg-white/90 backdrop-blur border border-[#E4DDD2] shadow-[0_12px_30px_rgba(23,20,15,0.12)] z-30 flex items-center justify-center"
             >
               <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full spin-badge">
                 <defs>
@@ -314,8 +314,8 @@ export function Hero() {
                   </textPath>
                 </text>
               </svg>
-              <span className="w-10 h-10 rounded-full bg-orange-grad text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-45">
-                <ArrowUpRight className="w-5 h-5 rtl:-scale-x-100" />
+              <span className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-orange-grad text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-45">
+                <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 rtl:-scale-x-100" />
               </span>
             </Link>
           </div>

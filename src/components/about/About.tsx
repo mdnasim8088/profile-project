@@ -28,16 +28,16 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-transparent relative overflow-hidden">
+    <section id="about" className="py-14 md:py-24 bg-transparent relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="glass-panel p-8 md:p-12 relative overflow-hidden hover:border-[#F05A1A]/50 transition-all duration-500"
+          className="glass-panel p-6 md:p-12 relative overflow-hidden hover:border-[#F05A1A]/50 transition-all duration-500"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
             {/* Left Column: Information */}
             <div className="lg:col-span-7 flex flex-col gap-6">
               <span className="bracket-label">{t("badge")}</span>
@@ -64,7 +64,7 @@ export function About() {
               <motion.div
                 whileHover={{ scale: 1.02, x: 4 }}
                 transition={{ duration: 0.2 }}
-                className="glass-card corner-marks p-6 flex items-start gap-4 hover:border-[#F05A1A] hover:shadow-[0_8px_20px_rgba(240,90,26,0.08)] transition-all duration-300"
+                className="glass-card corner-marks p-5 md:p-6 flex items-start gap-4 hover:border-[#F05A1A] hover:shadow-[0_8px_20px_rgba(240,90,26,0.08)] transition-all duration-300"
               >
                 <div className="p-3.5 rounded-xl bg-[#F05A1A]/10 text-[#F05A1A] shrink-0">
                   <Monitor className="w-6 h-6" />
@@ -80,7 +80,7 @@ export function About() {
               <motion.div
                 whileHover={{ scale: 1.02, x: 4 }}
                 transition={{ duration: 0.2 }}
-                className="glass-card corner-marks p-6 flex items-start gap-4 hover:border-[#F05A1A] hover:shadow-[0_8px_20px_rgba(240,90,26,0.08)] transition-all duration-300"
+                className="glass-card corner-marks p-5 md:p-6 flex items-start gap-4 hover:border-[#F05A1A] hover:shadow-[0_8px_20px_rgba(240,90,26,0.08)] transition-all duration-300"
               >
                 <div className="p-3.5 rounded-xl bg-[#F05A1A]/10 text-[#F05A1A] shrink-0">
                   <Printer className="w-6 h-6" />
@@ -96,7 +96,7 @@ export function About() {
               <motion.div
                 whileHover={{ scale: 1.02, x: 4 }}
                 transition={{ duration: 0.2 }}
-                className="glass-card corner-marks p-6 flex items-start gap-4 hover:border-[#F05A1A] hover:shadow-[0_8px_20px_rgba(240,90,26,0.08)] transition-all duration-300"
+                className="glass-card corner-marks p-5 md:p-6 flex items-start gap-4 hover:border-[#F05A1A] hover:shadow-[0_8px_20px_rgba(240,90,26,0.08)] transition-all duration-300"
               >
                 <div className="p-3.5 rounded-xl bg-[#F05A1A]/10 text-[#F05A1A] shrink-0">
                   <CheckCircle className="w-6 h-6" />

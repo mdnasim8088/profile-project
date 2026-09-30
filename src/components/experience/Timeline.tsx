@@ -15,10 +15,10 @@ export function Timeline() {
   const [activeTab, setActiveTab] = useState<"experience" | "education">("experience");
 
   return (
-    <section id="experience" className="py-32 bg-transparent border-t border-[#E4DDD2] relative overflow-hidden">
+    <section id="experience" className="py-16 md:py-32 bg-transparent border-t border-[#E4DDD2] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Header */}
-        <div className="flex flex-col items-center text-center gap-4 mb-20">
+        <div className="flex flex-col items-center text-center gap-4 mb-12 md:mb-20">
           <span className="bracket-label mb-2">{t("badge")}</span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#17140F] tracking-tight">
             <AccentText text={t("title")} />

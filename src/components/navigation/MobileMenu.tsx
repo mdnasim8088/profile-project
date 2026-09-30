@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { Menu, X } from "lucide-react";
@@ -9,6 +9,7 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
   const locale = useLocale();
   const t = useTranslations("nav");
 
@@ -21,12 +22,29 @@ export function MobileMenu() {
     { href: `/${locale}#contact`, label: t("contact") },
   ];
 
+  // Close the open menu on Escape or a tap anywhere outside it
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setIsOpen(false);
+    const onPointer = (e: PointerEvent) => {
+      if (!rootRef.current?.contains(e.target as Node)) setIsOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", onPointer);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("pointerdown", onPointer);
+    };
+  }, [isOpen]);
+
   return (
-    <div className="md:hidden">
+    <div ref={rootRef} className="md:hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="p-2 text-[#17140F] hover:text-[#F05A1A] transition-colors focus:outline-none cursor-pointer"
         aria-label="Toggle Menu"
+        aria-expanded={isOpen}
+        aria-controls="mobile-menu"
       >
         {isOpen ? <X className="w-6 h-6 text-[#F05A1A]" /> : <Menu className="w-6 h-6" />}
       </button>
@@ -34,6 +52,7 @@ export function MobileMenu() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
