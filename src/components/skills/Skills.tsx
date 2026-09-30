@@ -68,8 +68,8 @@ export function Skills() {
           </div>
         </div>
 
-        {/* Circular Skill Cards Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6 mb-12 md:mb-24">
+        {/* Circular skill cards: same column widths as a 2/3/4-column grid, but a short last row is centered */}
+        <div className="flex flex-wrap justify-center gap-4 lg:gap-6 mb-12 md:mb-24">
           {filteredSkills.map((skill, idx) => (
             <CircularSkillCard key={skill.id} skill={skill} idx={idx} />
           ))}

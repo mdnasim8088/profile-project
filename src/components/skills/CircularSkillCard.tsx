@@ -23,7 +23,7 @@ export function CircularSkillCard({ skill, idx }: CircularSkillCardProps) {
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: idx * 0.08, ease: "easeOut" }}
       whileHover={{ y: -4 }}
-      className="glass-card corner-marks p-4 md:p-6 flex flex-col items-center gap-4 md:gap-5 text-center hover:border-[#F05A1A] hover:shadow-[0_8px_20px_rgba(240,90,26,0.1)] transition-all duration-300 group cursor-default"
+      className="w-[calc((100%-1rem)/2)] sm:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-4.5rem)/4)] glass-card corner-marks p-4 md:p-6 flex flex-col items-center gap-4 md:gap-5 text-center hover:border-[#F05A1A] hover:shadow-[0_8px_20px_rgba(240,90,26,0.1)] transition-all duration-300 group cursor-default"
     >
       <div className="relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center">
         <svg viewBox="0 0 96 96" className="w-full h-full transform -rotate-90 drop-shadow-xs">

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Project } from "@/types";
@@ -27,10 +28,20 @@ export function ProjectCard({ project, idx }: ProjectCardProps) {
     >
       {/* Project Card Header Image Simulation */}
       <div className="relative aspect-[16/10] w-full bg-gradient-to-br from-white/50 via-[#EFEAE2]/40 to-[#F05A1A]/[0.06] backdrop-blur-md overflow-hidden flex items-center justify-center border-b border-white/70">
-        <div className="glass-chip w-16 h-16 rounded-2xl flex items-center justify-center text-[#8F877C] group-hover:scale-105 group-hover:text-[#F05A1A] group-hover:border-[#F05A1A] transition-all duration-500">
-          <Layers className="w-8 h-8" />
-        </div>
-        <span className="absolute top-4 ltr:right-4 rtl:left-4 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-orange-grad text-white shadow-xs">
+        {project.thumbnail ? (
+          <Image
+            src={project.thumbnail}
+            alt={isAr ? project.titleAr : project.title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="glass-chip w-16 h-16 rounded-2xl flex items-center justify-center text-[#8F877C] group-hover:scale-105 group-hover:text-[#F05A1A] group-hover:border-[#F05A1A] transition-all duration-500">
+            <Layers className="w-8 h-8" />
+          </div>
+        )}
+        <span className="absolute z-10 top-4 ltr:right-4 rtl:left-4 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-orange-grad text-white shadow-xs">
           {isAr ? project.categoryAr : project.category}
         </span>
       </div>

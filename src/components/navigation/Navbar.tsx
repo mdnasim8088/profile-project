@@ -7,6 +7,7 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
 import { BrandBadge } from "@/components/ui/BrandBadge";
+import { siteData } from "@/data/site";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -47,11 +48,11 @@ export function Navbar() {
           <BrandBadge className="w-10 h-10" />
           <span className="flex flex-col leading-none">
             <span className="font-display font-extrabold text-[15px] tracking-tight text-[#17140F] group-hover:text-[#F05A1A] transition-colors">
-              {isAr ? "توسار" : "Tusar"}
+              {isAr ? siteData.firstNameAr : siteData.firstName}
               <span className="text-[#F05A1A]">.</span>
             </span>
             <span className="mt-1 font-mono text-[9.5px] font-semibold tracking-[0.28em] uppercase text-[#8F877C] rtl:tracking-normal">
-              {isAr ? "أحمد" : "Ahammad"}
+              {isAr ? siteData.lastNameAr : siteData.lastName}
             </span>
           </span>
         </Link>

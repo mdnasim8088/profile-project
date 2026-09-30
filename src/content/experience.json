@@ -1,0 +1,67 @@
+[
+  {
+    "id": "taghareed",
+    "title": "Print Machine Operator & Production Specialist",
+    "titleAr": "مشغل ماكينات طباعة وأخصائي إنتاج",
+    "company": "Taghareed Company",
+    "companyAr": "شركة تغاريد",
+    "period": "2025 – Present",
+    "periodAr": "2025 – حتى الآن",
+    "location": "Al Hasa, Saudi Arabia",
+    "locationAr": "الأحساء، المملكة العربية السعودية",
+    "description": "Operating high-capacity UV printers, banner plotters, and sticker cutting machines using Roland VersaWorks and SignMaster software with high precision.",
+    "descriptionAr": "تشغيل ماكينات طباعة الـ UV عالية الطاقة، وبنرات الإعلانات، وماكينات قص الملصقات باستخدام برنامجي Roland VersaWorks و SignMaster بدقة متناهية."
+  },
+  {
+    "id": "padel",
+    "title": "Operations Supervisor",
+    "titleAr": "مشرف عمليات وتشغيل",
+    "company": "PADEL IT Company",
+    "companyAr": "شركة PADEL IT",
+    "period": "2024 – 2025",
+    "periodAr": "2024 – 2025",
+    "location": "Riyadh, Saudi Arabia",
+    "locationAr": "الرياض، المملكة العربية السعودية",
+    "description": "Supervised production workflows, team schedules, client requirements, and quality assurance for digital and printed deliverables.",
+    "descriptionAr": "الإشراف على خطط العمل اليومية، وجداول الفريق، وتلبية متطلبات العملاء، وضمان أعلى معايير الجودة للمطبوعات والتصاميم الرقمية."
+  },
+  {
+    "id": "clothing",
+    "title": "Store Manager",
+    "titleAr": "مدير فرع ومتجر",
+    "company": "Clothing Store",
+    "companyAr": "متجر ملابس تجاري",
+    "period": "2023 – 2024",
+    "periodAr": "2023 – 2024",
+    "location": "Bangladesh",
+    "locationAr": "بنغلاديش",
+    "description": "Managed retail operations, customer relations, visual merchandising, and designed promotional advertising graphics.",
+    "descriptionAr": "إدارة العمليات التجارية والمخزون، وتنسيق العروض البصرية، وتصميم الإعلانات واللافتات الترويجية للمتجر."
+  },
+  {
+    "id": "walton",
+    "title": "Branch Manager",
+    "titleAr": "مدير فرع",
+    "company": "Walton Electronics",
+    "companyAr": "والتون للإلكترونيات",
+    "period": "2021 – 2023",
+    "periodAr": "2021 – 2023",
+    "location": "Bangladesh",
+    "locationAr": "بنغلاديش",
+    "description": "Overseeing retail operations, sales staff performance, local marketing campaigns, and in-store promotional materials.",
+    "descriptionAr": "إدارة المبيعات وفريق العمل، وتنظيم الحملات التسويقية المحلية، وإعداد المواد الترويجية داخل الفروع."
+  },
+  {
+    "id": "designking",
+    "title": "Graphic Designer & Assistant Manager",
+    "titleAr": "مصمم جرافيك ومساعد مدير",
+    "company": "Design King Company",
+    "companyAr": "شركة ديزاين كينغ",
+    "period": "2020 – 2021",
+    "periodAr": "2020 – 2021",
+    "location": "Brahmanbaria, Bangladesh",
+    "locationAr": "براهمانباريا، بنغلاديش",
+    "description": "Designed corporate logos, monograms, sticker cut files, menus, and prepared full pre-press files for production.",
+    "descriptionAr": "تصميم الشعارات، والهويات البصرية، وقوالب قص الملصقات، وقوائم الطعام، وتجهيز ملفات الطباعة النهائية."
+  }
+]

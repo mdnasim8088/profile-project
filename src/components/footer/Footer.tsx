@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { ArrowUp } from "lucide-react";
 import { motion } from "framer-motion";
 import { BrandBadge } from "@/components/ui/BrandBadge";
+import { fullName, siteData } from "@/data/site";
 
 export function Footer() {
   const locale = useLocale();
@@ -22,7 +23,7 @@ export function Footer() {
           <BrandBadge tone="dark" className="w-12 h-12 m-1.5" />
           <div className="flex flex-col gap-1.5">
             <span className="font-display font-bold text-lg text-[#F7F4EF] tracking-wide">
-              {isAr ? "توسار أحمد" : "Tusar Ahammad"}
+              {fullName(isAr)}
             </span>
             <p className="text-[11px] text-[#8F877C] tracking-wider font-bold uppercase">
               {t("brandSubtitle")}
@@ -34,7 +35,7 @@ export function Footer() {
         <div className="flex items-center gap-2.5">
           {/* Behance */}
           <a
-            href="https://www.behance.net/mdtusardotcom"
+            href={siteData.behance}
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-[14px] bg-[#221E19] border border-[#332D26] hover:border-[#F05A1A] hover:bg-[#F05A1A]/10 text-[#A39A8E] hover:text-[#F05A1A] transition-all duration-300 shadow-xs"
@@ -45,7 +46,7 @@ export function Footer() {
           </a>
           {/* LinkedIn */}
           <a
-            href="https://www.linkedin.com/in/md-tusar-ahammad-nasim-27a011355/"
+            href={siteData.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-[14px] bg-[#221E19] border border-[#332D26] hover:border-[#F05A1A] hover:bg-[#F05A1A]/10 text-[#A39A8E] hover:text-[#F05A1A] transition-all duration-300 shadow-xs"
@@ -56,7 +57,7 @@ export function Footer() {
           </a>
           {/* WhatsApp */}
           <a
-            href="https://wa.me/966538937618"
+            href={`https://wa.me/${siteData.whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-[14px] bg-[#221E19] border border-[#332D26] hover:border-[#F05A1A] hover:bg-[#F05A1A]/10 text-[#A39A8E] hover:text-[#F05A1A] transition-all duration-300 shadow-xs"
@@ -67,7 +68,7 @@ export function Footer() {
           </a>
           {/* Email */}
           <a
-            href="mailto:mdnasim8088@gmail.com"
+            href={`mailto:${siteData.email}`}
             className="p-3 rounded-[14px] bg-[#221E19] border border-[#332D26] hover:border-[#F05A1A] hover:bg-[#F05A1A]/10 text-[#A39A8E] hover:text-[#F05A1A] transition-all duration-300 shadow-xs"
             aria-label="Email"
             title="Email"
@@ -78,7 +79,7 @@ export function Footer() {
 
         {/* Right side: Copyright */}
         <div className="text-[11px] font-semibold text-[#8F877C] text-center">
-          © {new Date().getFullYear()} {isAr ? "توسار أحمد" : "Tusar Ahammad"}. {t("rights")}
+          © {new Date().getFullYear()} {fullName(isAr)}. {t("rights")}
         </div>
 
         {/* Right: Scroll to top */}

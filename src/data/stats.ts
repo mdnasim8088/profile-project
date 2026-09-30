@@ -1,32 +1,5 @@
+// Edited from the admin panel (/admin); src/content/stats.json is the source of truth.
+import data from "@/content/stats.json";
 import { StatCard } from "@/types";
 
-export const statsData: StatCard[] = [
-  {
-    id: "experience",
-    value: "6",
-    suffix: "+",
-    label: "Years of Experience",
-    labelAr: "سنوات من الخبرة",
-  },
-  {
-    id: "companies",
-    value: "5",
-    suffix: "",
-    label: "Companies Worked With",
-    labelAr: "شركات عملت معها",
-  },
-  {
-    id: "countries",
-    value: "2",
-    suffix: "",
-    label: "Countries Worked In",
-    labelAr: "دول عملت فيها",
-  },
-  {
-    id: "projects",
-    value: "7",
-    suffix: "+",
-    label: "Major Projects Completed",
-    labelAr: "مشاريع تصميم مكتملة",
-  },
-];
+export const statsData = data as StatCard[];

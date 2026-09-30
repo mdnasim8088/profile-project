@@ -6,7 +6,8 @@ export default createMiddleware(routing);
 export const config = {
   // Match all pathnames except for
   // - /api routes
+  // - /admin (the content editor is not localized)
   // - /_next (Next.js internals)
   // - static files such as /icon.svg or /brand/*.svg (anything with a dot)
-  matcher: ["/((?!api|_next|.*\..*).*)"],
+  matcher: ["/((?!api|admin|_next|.*\..*).*)"],
 };

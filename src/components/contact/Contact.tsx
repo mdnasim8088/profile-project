@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, CheckCircle2, ExternalLink } from "lucide-react";
+import { siteData } from "@/data/site";
 
 export function Contact() {
   const t = useTranslations("contact");
@@ -72,13 +73,13 @@ export function Contact() {
                   <div className="min-w-0">
                     <span className="text-[11px] font-bold text-[#8F877C] block uppercase tracking-wider mb-1">{t("phone")}</span>
                     <a
-                      href="https://wa.me/966538937618"
+                      href={`https://wa.me/${siteData.whatsapp}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm font-bold text-[#17140F] group-hover:text-[#F05A1A] transition-colors break-words"
                       dir="ltr"
                     >
-                      +966 53 893 7618
+                      {siteData.phone}
                     </a>
                   </div>
                 </div>
@@ -91,11 +92,11 @@ export function Contact() {
                   <div className="min-w-0">
                     <span className="text-[11px] font-bold text-[#8F877C] block uppercase tracking-wider mb-1">{t("email")}</span>
                     <a
-                      href="mailto:mdnasim8088@gmail.com"
+                      href={`mailto:${siteData.email}`}
                       className="text-sm font-bold text-[#17140F] group-hover:text-[#F05A1A] transition-colors break-words"
                       dir="ltr"
                     >
-                      mdnasim8088@gmail.com
+                      {siteData.email}
                     </a>
                   </div>
                 </div>
@@ -122,7 +123,7 @@ export function Contact() {
                 <div className="grid grid-cols-1 min-[360px]:grid-cols-2 gap-3">
                   {/* Behance Link */}
                   <a
-                    href="https://www.behance.net/mdtusardotcom"
+                    href={siteData.behance}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="glass-card flex items-center justify-between gap-2 px-3 py-4 sm:p-4 hover:border-[#F05A1A] hover:bg-[#F05A1A]/5 text-[13px] font-bold text-[#17140F] hover:text-[#F05A1A] transition-all group"
@@ -136,7 +137,7 @@ export function Contact() {
 
                   {/* LinkedIn Link */}
                   <a
-                    href="https://www.linkedin.com/in/md-tusar-ahammad-nasim-27a011355/?isSelfProfile=true"
+                    href={siteData.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="glass-card flex items-center justify-between gap-2 px-3 py-4 sm:p-4 hover:border-[#F05A1A] hover:bg-[#F05A1A]/5 text-[13px] font-bold text-[#17140F] hover:text-[#F05A1A] transition-all group"

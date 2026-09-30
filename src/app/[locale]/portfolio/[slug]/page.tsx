@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { projectsData } from "@/data/projects";
 import { ArrowLeft, Calendar, Layers, Wrench } from "lucide-react";
@@ -39,6 +40,7 @@ export default async function ProjectDetailPage({ params }: Props) {
   const challenge = isAr ? project.challengeAr : project.challenge;
   const concept = isAr ? project.conceptAr : project.concept;
   const category = isAr ? project.categoryAr : project.category;
+  const banner = project.heroImage || project.thumbnail;
 
   return (
     <div className="min-h-screen pt-32 pb-24 bg-white">
@@ -73,7 +75,12 @@ export default async function ProjectDetailPage({ params }: Props) {
           </p>
         </div>
 
-        {/* Large Banner Placeholder */}
+        {/* Large banner: the uploaded image, or a placeholder until one is added */}
+        {banner ? (
+          <div className="relative w-full aspect-[21/9] rounded-3xl overflow-hidden border border-[#E4E5E7] shadow-xs bg-[#F7F7F7]">
+            <Image src={banner} alt={title} fill priority sizes="(max-width: 1024px) 100vw, 1024px" className="object-cover" />
+          </div>
+        ) : (
         <div className="w-full aspect-[21/9] rounded-3xl bg-[#F7F7F7] border border-[#E4E5E7] flex flex-col items-center justify-center p-8 gap-3 shadow-xs">
           <div className="w-20 h-20 rounded-2xl bg-white border border-[#E4E5E7] flex items-center justify-center text-[#F05A1A] shadow-xs">
             <Layers className="w-10 h-10" />
@@ -82,6 +89,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             {title}
           </span>
         </div>
+        )}
 
         {/* Details Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pt-6">

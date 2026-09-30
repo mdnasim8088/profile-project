@@ -9,23 +9,8 @@ import { Award, CheckCircle, Monitor, Printer } from "lucide-react";
 export function About() {
   const t = useTranslations("about");
 
-  const skillsList = [
-    t("skills.item1"),
-    t("skills.item2"),
-    t("skills.item3"),
-    t("skills.item4"),
-    t("skills.item5"),
-    t("skills.item6"),
-    t("skills.item7"),
-    t("skills.item8"),
-    t("skills.item9"),
-    t("skills.item10"),
-    t("skills.item11"),
-    t("skills.item12"),
-    t("skills.item13"),
-    t("skills.item14"),
-    t("skills.item15"),
-  ];
+  // A list in the messages file, so items can be added or removed from the admin panel
+  const skillsList = t.raw("skills") as string[];
 
   return (
     <section id="about" className="py-14 md:py-24 bg-transparent relative overflow-hidden">

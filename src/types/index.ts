@@ -63,6 +63,29 @@ export interface Testimonial {
   stars: number;
 }
 
+/** Name, photo, hero badges, contact and social links (src/content/site.json). */
+export interface SiteContent {
+  firstName: string;
+  firstNameAr: string;
+  lastName: string;
+  lastNameAr: string;
+  profileImage: string;
+  expertLabel: string;
+  expertLabelAr: string;
+  expertTitle: string;
+  expertTitleAr: string;
+  yearsValue: string;
+  yearsLabel: string;
+  yearsLabelAr: string;
+  rotatingText: string;
+  rotatingTextAr: string;
+  phone: string;
+  whatsapp: string;
+  email: string;
+  behance: string;
+  linkedin: string;
+}
+
 export interface Project {
   id: string;
   slug: string;

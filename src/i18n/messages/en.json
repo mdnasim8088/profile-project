@@ -39,23 +39,23 @@
     "card2Desc": "Operating UV printers, plotters, and banner machines using Roland VersaWorks and SignMaster.",
     "card3Title": "Management & Leadership",
     "card3Desc": "Over 3 years of supervisory experience managing store operations and production teams.",
-    "skills": {
-      "item1": "Logo, monogram & brand identity design",
-      "item2": "Social media & Instagram carousel design",
-      "item3": "YouTube thumbnails & poster design",
-      "item4": "Advanced photo retouching & manipulation",
-      "item5": "Restaurant menu design & layout",
-      "item6": "Print-ready pre-flight file preparation",
-      "item7": "UV printing & specialized machine operation",
-      "item8": "Large format banner printing & production",
-      "item9": "Sticker production & precision vinyl cutting",
-      "item10": "SignMaster cutting software mastery",
-      "item11": "Roland VersaWorks RIP software",
-      "item12": "CorelDRAW vector graphics",
-      "item13": "AI-assisted design workflows",
-      "item14": "MS Word & PowerPoint document design",
-      "item15": "Store & production operations management"
-    }
+    "skills": [
+      "Logo, monogram & brand identity design",
+      "Social media & Instagram carousel design",
+      "YouTube thumbnails & poster design",
+      "Advanced photo retouching & manipulation",
+      "Restaurant menu design & layout",
+      "Print-ready pre-flight file preparation",
+      "UV printing & specialized machine operation",
+      "Large format banner printing & production",
+      "Sticker production & precision vinyl cutting",
+      "SignMaster cutting software mastery",
+      "Roland VersaWorks RIP software",
+      "CorelDRAW vector graphics",
+      "AI-assisted design workflows",
+      "MS Word & PowerPoint document design",
+      "Store & production operations management"
+    ]
   },
   "skills": {
     "badge": "TECHNICAL PROFICIENCY",
