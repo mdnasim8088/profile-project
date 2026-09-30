@@ -190,7 +190,7 @@ export function Hero() {
             <div className="hidden md:block">
               {[
                 { cls: "top-[6%] -left-20 w-36 h-28", tag: "top-2 left-2", text: isAr ? "تصميم" : "design", d: 0.9 },
-                { cls: "top-[52%] -right-24 lg:-right-12 min-[1440px]:-right-24 w-32 h-36", tag: "bottom-2 right-2", text: isAr ? "طباعة" : "print", d: 1.05 },
+                { cls: "top-[52%] -right-24 lg:-right-12 min-[90rem]:-right-24 w-32 h-36", tag: "bottom-2 right-2", text: isAr ? "طباعة" : "print", d: 1.05 },
                 { cls: "-bottom-10 left-[4%] w-44 h-24", tag: "bottom-2 left-2", text: isAr ? "هوية بصرية" : "branding", d: 1.2 },
                 { cls: "top-0 right-[2%] w-24 h-20", tag: "top-2 right-2", text: "UV", d: 1.35 },
               ].map((b) => (
@@ -272,7 +272,7 @@ export function Hero() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0, y: [0, -8, 0] }}
               transition={{ opacity: { delay: 1 }, x: { delay: 1, duration: 0.6 }, y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.6 } }}
-              className="absolute top-[30%] -right-5 md:top-[24%] md:-right-14 lg:-right-10 min-[1320px]:-right-14 flex items-center gap-1.5 md:gap-3 px-2 py-1.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl bg-white/90 backdrop-blur-md border border-[#E4DDD2] shadow-[0_12px_30px_rgba(23,20,15,0.12)] z-20"
+              className="absolute top-[30%] -right-5 md:top-[27%] md:-right-14 lg:-right-12 min-[90rem]:-right-20 lg:max-xl:scale-[0.85] lg:max-xl:origin-right flex items-center gap-1.5 md:gap-3 px-2 py-1.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl bg-white/90 backdrop-blur-md border border-[#E4DDD2] shadow-[0_12px_30px_rgba(23,20,15,0.12)] z-20"
             >
               <div className="w-6 h-6 md:w-9 md:h-9 rounded-lg md:rounded-xl bg-orange-grad flex items-center justify-center shrink-0 shadow-[0_6px_14px_rgba(240,90,26,0.35)]">
                 <Zap className="w-3 h-3 md:w-4 md:h-4 text-white" />
@@ -292,7 +292,7 @@ export function Hero() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0, y: [0, 8, 0] }}
               transition={{ opacity: { delay: 1.2 }, x: { delay: 1.2, duration: 0.6 }, y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.8 } }}
-              className="absolute bottom-[17%] -left-3 md:bottom-[20%] md:-left-14 flex items-center gap-1.5 md:gap-3 px-2.5 py-1.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl bg-[#17140F] shadow-[0_12px_30px_rgba(23,20,15,0.3)] z-20"
+              className="absolute bottom-[17%] -left-3 md:bottom-[20%] md:-left-20 lg:max-xl:scale-[0.85] lg:max-xl:origin-left flex items-center gap-1.5 md:gap-3 px-2.5 py-1.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl bg-[#17140F] shadow-[0_12px_30px_rgba(23,20,15,0.3)] z-20"
             >
               <span className="font-display text-lg md:text-3xl font-extrabold text-gradient-orange leading-none">6+</span>
               <div className="flex flex-col pe-1">
