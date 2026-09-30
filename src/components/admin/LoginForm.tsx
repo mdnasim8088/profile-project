@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { Loader2, Lock } from "lucide-react";
+import { Eye, EyeOff, Loader2, Lock } from "lucide-react";
 import { inputCls } from "./fields";
 
 export function LoginForm({ configured }: { configured: boolean }) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
+  const [show, setShow] = useState(false);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,15 +37,27 @@ export function LoginForm({ configured }: { configured: boolean }) {
         </div>
         {configured ? (
           <>
-            <input
-              type="password"
-              autoFocus
-              autoComplete="current-password"
-              placeholder="Password"
-              className={inputCls}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <div className="relative">
+              <input
+                type={show ? "text" : "password"}
+                autoFocus
+                autoComplete="current-password"
+                placeholder="Password"
+                aria-label="Password"
+                className={`${inputCls} pe-12`}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button
+                type="button"
+                onClick={() => setShow((s) => !s)}
+                className="absolute inset-y-0 end-0 flex w-11 items-center justify-center rounded-e-xl text-[#8F877C] hover:text-[#F05A1A] cursor-pointer"
+                aria-label={show ? "Hide password" : "Show password"}
+                title={show ? "Hide password" : "Show password"}
+              >
+                {show ? <EyeOff className="w-4.5 h-4.5" /> : <Eye className="w-4.5 h-4.5" />}
+              </button>
+            </div>
             {error && <p className="text-sm font-semibold text-red-600">{error}</p>}
             <button
               disabled={busy || !password}
