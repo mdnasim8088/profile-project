@@ -118,5 +118,25 @@
       "إخراج لوحات وبنرات المقاسات الكبيرة",
       "مسارات قص دقيقة لأجهزة البلوتر"
     ]
+  },
+  {
+    "number": "07",
+    "title": "Laser Engraving & Cutting – Design to Machine",
+    "titleAr": "الحفر والقص بالليزر – من التصميم إلى التشغيل",
+    "description": "End-to-end laser work: I prepare the vector artwork and cut paths, set up the job in the laser software, and operate the machine myself to engrave and cut wood, acrylic and metal — from one-off gifts to trophies and signage.",
+    "descriptionAr": "عمل ليزر متكامل: أجهّز التصميم الفيكتور ومسارات القص، وأضبط الملف في برنامج الليزر، وأشغّل الماكينة بنفسي للحفر والقص على الخشب والأكريليك والمعدن، من الهدايا الفردية إلى الدروع واللوحات.",
+    "features": [
+      "Vector Artwork & Cut Path Prep",
+      "LaserCAD Job Setup",
+      "Wood, Acrylic & Metal Engraving",
+      "Trophies, Gifts & Custom Plaques"
+    ],
+    "featuresAr": [
+      "تجهيز التصميم الفيكتور ومسارات القص",
+      "ضبط ملفات الليزر ببرنامج LaserCAD",
+      "الحفر على الخشب والأكريليك والمعدن",
+      "دروع وهدايا ولوحات مخصصة"
+    ],
+    "id": "laser"
   }
 ]

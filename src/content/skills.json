@@ -54,5 +54,13 @@
     "category": "office",
     "categoryAr": "أوفيس",
     "percentage": 75
+  },
+  {
+    "name": "LaserCAD (Laser Engraving & Cutting)",
+    "nameAr": "ليزر كاد (الحفر والقص بالليزر)",
+    "percentage": 90,
+    "category": "print",
+    "categoryAr": "طباعة وقص",
+    "id": "lasercad"
   }
 ]
