@@ -249,8 +249,12 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Portrait, layer 2: head breaking out above the circle */}
-            <div className="absolute inset-0 [clip-path:inset(0_0_62%_0)] pointer-events-none" aria-hidden="true">
+            {/* Portrait, layer 2: head breaking out above the circle. The mask cuts out the
+                circle itself so this layer never paints over layer 1 (no visible patch). */}
+            <div
+              className="absolute inset-0 [clip-path:inset(0_0_62%_0)] [mask-image:radial-gradient(50%_40%_at_50%_60%,transparent_99%,#000_100%)] [-webkit-mask-image:radial-gradient(50%_40%_at_50%_60%,transparent_99%,#000_100%)] pointer-events-none"
+              aria-hidden="true"
+            >
               <div className="absolute inset-0 origin-bottom transition-transform duration-700 ease-out group-hover:scale-[1.04]">
                 <Image
                   src="/images/profile-fiverr.png"
