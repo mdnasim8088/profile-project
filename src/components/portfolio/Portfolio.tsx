@@ -17,7 +17,9 @@ export function Portfolio() {
     { id: "social-media", label: t("socialMedia") },
     { id: "print-uv", label: t("printUv") },
     { id: "signage", label: t("signage") },
-  ];
+    { id: "laser", label: t("laser") },
+    { id: "web", label: t("web") },
+  ].filter((c) => c.id === "all" || projectsData.some((p) => p.category === c.id)); // hide empty tabs
 
   const filteredProjects =
     activeCategory === "all"
