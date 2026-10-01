@@ -110,6 +110,8 @@ export const SECTIONS: Section[] = [
           { value: "social-media", label: "Social Media", labelAr: "السوشيال ميديا" },
           { value: "print-uv", label: "Print & UV", labelAr: "الطباعة والـ UV" },
           { value: "signage", label: "Signage & Plotter", labelAr: "اللوحات والقص" },
+          { value: "laser", label: "Laser Engraving & Cutting", labelAr: "الحفر والقص بالليزر" },
+          { value: "web", label: "Website Design & Development", labelAr: "تصميم وتطوير المواقع" },
         ],
         syncArKey: "categoryAr",
       },
