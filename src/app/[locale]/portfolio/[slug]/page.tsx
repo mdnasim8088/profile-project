@@ -77,8 +77,17 @@ export default async function ProjectDetailPage({ params }: Props) {
 
         {/* Large banner: the uploaded image, or a placeholder until one is added */}
         {banner ? (
-          <div className="relative w-full aspect-[21/9] rounded-3xl overflow-hidden border border-[#E4E5E7] shadow-xs bg-[#F7F7F7]">
-            <Image src={banner} alt={title} fill priority sizes="(max-width: 1024px) 100vw, 1024px" className="object-cover" />
+          <div className="w-full rounded-3xl overflow-hidden border border-[#E4E5E7] shadow-xs bg-[#F7F7F7] flex justify-center">
+            {/* Shown whole at its own shape (no cropping) */}
+            <Image
+              src={banner}
+              alt={title}
+              width={1600}
+              height={1000}
+              priority
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
           </div>
         ) : (
         <div className="w-full aspect-[21/9] rounded-3xl bg-[#F7F7F7] border border-[#E4E5E7] flex flex-col items-center justify-center p-8 gap-3 shadow-xs">
