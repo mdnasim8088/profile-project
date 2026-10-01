@@ -11,7 +11,9 @@ export type Field = {
   label: string;
   type: FieldType;
   bilingual?: boolean;
-  options?: { value: string; label: string }[];
+  /** For selects: `labelAr` is copied into `syncArKey` when the option is picked. */
+  options?: { value: string; label: string; labelAr?: string }[];
+  syncArKey?: string;
   min?: number;
   max?: number;
   help?: string;
@@ -104,13 +106,14 @@ export const SECTIONS: Section[] = [
         label: "Filter category",
         type: "select",
         options: [
-          { value: "brand-identity", label: "Brand Identity" },
-          { value: "social-media", label: "Social Media" },
-          { value: "print-uv", label: "Print & UV" },
-          { value: "signage", label: "Signage & Plotter" },
+          { value: "brand-identity", label: "Brand Identity", labelAr: "الهوية البصرية" },
+          { value: "social-media", label: "Social Media", labelAr: "السوشيال ميديا" },
+          { value: "print-uv", label: "Print & UV", labelAr: "الطباعة والـ UV" },
+          { value: "signage", label: "Signage & Plotter", labelAr: "اللوحات والقص" },
         ],
+        syncArKey: "categoryAr",
       },
-      { key: "categoryAr", label: "Category name (Arabic)", type: "text" },
+      { key: "categoryAr", label: "Category name (Arabic)", type: "text", help: "Filled in automatically when you pick a category. You can still change it." },
       { key: "year", label: "Year", type: "text" },
       { key: "thumbnail", label: "Card image", type: "image", help: "Shown in the portfolio grid (16:10 works best)." },
       { key: "heroImage", label: "Detail page banner", type: "image", help: "Wide image (21:9). Uses the card image if empty." },
@@ -185,13 +188,14 @@ export const SECTIONS: Section[] = [
         label: "Tab",
         type: "select",
         options: [
-          { value: "design", label: "Graphic Design" },
-          { value: "print", label: "Print & Plotter RIP" },
-          { value: "operator", label: "Print & Plotter RIP (operator)" },
-          { value: "office", label: "Office Suite" },
+          { value: "design", label: "Graphic Design", labelAr: "تصميم" },
+          { value: "print", label: "Print & Plotter RIP", labelAr: "طباعة وقص" },
+          { value: "operator", label: "Print & Plotter RIP (operator)", labelAr: "تشغيل الطباعة والقص" },
+          { value: "office", label: "Office Suite", labelAr: "أوفيس" },
         ],
+        syncArKey: "categoryAr",
       },
-      { key: "categoryAr", label: "Category label (Arabic)", type: "text" },
+      { key: "categoryAr", label: "Category label (Arabic)", type: "text", help: "Filled in automatically when you pick a tab. You can still change it." },
       id,
     ],
   },
@@ -233,6 +237,9 @@ export function emptyItem(section: CollectionSection): Record<string, unknown> {
     const blank = f.type === "list" ? [] : f.type === "number" ? (f.max ?? 0) : f.type === "select" ? f.options?.[0]?.value ?? "" : "";
     item[f.key] = blank;
     if (f.bilingual) item[f.key + "Ar"] = blank;
+  }
+  for (const f of section.fields) {
+    if (f.syncArKey) item[f.syncArKey] = f.options?.[0]?.labelAr ?? "";
   }
   return item;
 }

@@ -1,7 +1,7 @@
 "use client";
 
-import { createContext, useContext, useRef, useState } from "react";
-import { ImagePlus, Plus, Trash2, X } from "lucide-react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { ImagePlus, Languages, Plus, Trash2, X } from "lucide-react";
 import type { Field } from "./schema";
 
 /* ---------- Image uploads (kept in memory until Save) ---------- */
@@ -106,11 +106,80 @@ function ImageInput({ value, onChange }: { value: string; onChange: (v: string) 
   );
 }
 
+/* ---------- Auto translation (English → Arabic) ---------- */
+
+async function translateTexts(texts: string[]): Promise<string[]> {
+  const res = await fetch("/api/admin/translate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ texts }),
+  });
+  const data = (await res.json().catch(() => ({}))) as { translations?: string[]; error?: string };
+  if (!res.ok || !data.translations) throw new Error(data.error || "Translation failed");
+  return data.translations;
+}
+
+type TranslateStatus = "idle" | "busy" | "done" | "error";
+
 /* ---------- One schema field (English + Arabic side by side when bilingual) ---------- */
 
 export function FieldEditor({ field, data, onChange }: { field: Field; data: Record<string, unknown>; onChange: (key: string, value: unknown) => void }) {
+  // Always call the latest onChange from timers (it closes over the latest content)
+  const onChangeRef = useRef(onChange);
+  useEffect(() => {
+    onChangeRef.current = onChange;
+  });
+
+  const arKey = field.key + "Ar";
+  const canTranslate = Boolean(field.bilingual) && (field.type === "text" || field.type === "textarea" || field.type === "list");
+  const [status, setStatus] = useState<TranslateStatus>("idle");
+  /** Set once you type in the Arabic box yourself, so auto-translate stops overwriting it. */
+  const arEdited = useRef(false);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const runId = useRef(0);
+
+  useEffect(() => () => {
+    if (timer.current) clearTimeout(timer.current);
+  }, []);
+
+  const runTranslate = async (english: unknown) => {
+    const id = ++runId.current;
+    const list = Array.isArray(english) ? (english as string[]) : [String(english ?? "")];
+    if (list.every((t) => !t.trim())) {
+      setStatus("idle");
+      return;
+    }
+    setStatus("busy");
+    try {
+      const out = await translateTexts(list);
+      if (id !== runId.current) return; // a newer edit is on its way
+      onChangeRef.current(arKey, Array.isArray(english) ? out : out[0]);
+      setStatus("done");
+    } catch {
+      if (id === runId.current) setStatus("error");
+    }
+  };
+
+  const onEnglishChange = (v: unknown) => {
+    onChange(field.key, v);
+    if (!canTranslate || arEdited.current) return;
+    if (timer.current) clearTimeout(timer.current);
+    timer.current = setTimeout(() => runTranslate(v), 900);
+  };
+
+  const translateNow = () => {
+    arEdited.current = false;
+    if (timer.current) clearTimeout(timer.current);
+    runTranslate(data[field.key]);
+  };
+
   const render = (key: string, rtl: boolean) => {
     const value = data[key];
+    const set = (v: unknown) => {
+      if (field.bilingual && !rtl) return onEnglishChange(v);
+      if (field.bilingual && rtl) arEdited.current = true;
+      onChange(key, v);
+    };
     switch (field.type) {
       case "number":
         return (
@@ -120,12 +189,24 @@ export function FieldEditor({ field, data, onChange }: { field: Field; data: Rec
             min={field.min}
             max={field.max}
             value={typeof value === "number" ? value : 0}
-            onChange={(e) => onChange(key, e.target.value === "" ? 0 : Number(e.target.value))}
+            onChange={(e) => set(e.target.value === "" ? 0 : Number(e.target.value))}
           />
         );
       case "select":
         return (
-          <select className={inputCls} value={String(value ?? "")} onChange={(e) => onChange(key, e.target.value)}>
+          <select
+            className={inputCls}
+            value={String(value ?? "")}
+            onChange={(e) => {
+              const picked = field.options?.find((o) => o.value === e.target.value);
+              set(e.target.value);
+              // Fill the Arabic label too (after this update has rendered)
+              if (field.syncArKey && picked?.labelAr) {
+                const target = field.syncArKey;
+                setTimeout(() => onChangeRef.current(target, picked.labelAr), 0);
+              }
+            }}
+          >
             {field.options?.map((o) => (
               <option key={o.value} value={o.value}>
                 {o.label}
@@ -134,11 +215,11 @@ export function FieldEditor({ field, data, onChange }: { field: Field; data: Rec
           </select>
         );
       case "list":
-        return <ListInput value={Array.isArray(value) ? (value as string[]) : []} onChange={(v) => onChange(key, v)} rtl={rtl} />;
+        return <ListInput value={Array.isArray(value) ? (value as string[]) : []} onChange={set} rtl={rtl} />;
       case "image":
-        return <ImageInput value={String(value ?? "")} onChange={(v) => onChange(key, v)} />;
+        return <ImageInput value={String(value ?? "")} onChange={set} />;
       default:
-        return <TextInput value={String(value ?? "")} onChange={(v) => onChange(key, v)} rtl={rtl} multiline={field.type === "textarea"} />;
+        return <TextInput value={String(value ?? "")} onChange={set} rtl={rtl} multiline={field.type === "textarea"} />;
     }
   };
 
@@ -153,8 +234,22 @@ export function FieldEditor({ field, data, onChange }: { field: Field; data: Rec
             {render(field.key, false)}
           </div>
           <div>
-            <label className={labelCls}>{field.label} · العربية</label>
-            {render(field.key + "Ar", true)}
+            <div className="flex items-center justify-between gap-2">
+              <label className={labelCls}>{field.label} · العربية</label>
+              {canTranslate && (
+                <button
+                  type="button"
+                  onClick={translateNow}
+                  disabled={status === "busy"}
+                  className="mb-1.5 inline-flex items-center gap-1 text-[11px] font-bold text-[#F05A1A] hover:underline cursor-pointer disabled:opacity-60"
+                  title="Translate the English text to Arabic"
+                >
+                  <Languages className="w-3.5 h-3.5" />
+                  {status === "busy" ? "Translating…" : status === "error" ? "Failed — retry" : "Auto-translate"}
+                </button>
+              )}
+            </div>
+            {render(arKey, true)}
           </div>
         </div>
       ) : (
